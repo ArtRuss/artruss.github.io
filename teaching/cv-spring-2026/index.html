@@ -1,0 +1,1185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Special Studies: Computer Vision</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="/teaching/static/css/bluegold.css" rel="stylesheet">
+	<link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<style>
+	body {
+	    padding: 10px;
+	}
+	</style>
+
+          <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    </head>
+    <body>
+	<div class="container">
+
+	    <div class="row">
+		<div class="page-header">
+		    <ul class="nav nav-pills pull-right">
+
+            <li><a href="/"><i class="fa fa-home"></i> <span class="visible-md-inline visible-lg-inline"></span></a></li>
+			
+			<li><a href="#logistics"><i class="fa fa-cogs"></i> <span class="visible-md-inline visible-lg-inline">Logistics</span></a></li>
+			
+			<li><a href="#schedule"><i class="fa fa-calendar"></i> <span class="visible-md-inline visible-lg-inline">Schedule</span></a></li>
+			
+			<li><a href="#Requirements"><i class="fa fa-balance-scale"></i> <span class="visible-md-inline visible-lg-inline">Requirements</span></a></li>
+			
+			<li><a href="#resources"><i class="fa fa-external-link"></i> <span class="visible-md-inline visible-lg-inline">Resources</span></a></li>
+			
+		    </ul>
+		    <h1><i class="fa fa-eye"></i> Special Studies: Computer Vision</h1>
+		</div>
+	    </div>
+
+            
+<div class="row">
+<p>
+    This is currently a display of CSE 40535 Spring 2025 taught by 
+    <a href="https://www.wjscheirer.com/">Prof. Walter Scheirer</a>. <br>
+    Feel free to visit the 
+    <a href="https://drive.google.com/file/d/1Ufa48cBHXGdaCVR0QeanGFCac2FB09_-/view?usp=sharing">most recent syllabus</a>
+    of CSE 60535 Fall 2025 taught by 
+    <a href="https://www.adamczajka.com/">Prof. Adam Czajka</a>. <br>
+   <b>Our course will be inspired by these two awesome professors -- stay tuned for updates.</b>
+</p>
+<p><strong>CSE 40535</strong> is an upper-level <a href="http://cse.nd.edu">Computer Science and Engineering</a> course at the
+<a href="http://www.nd.edu">University of Notre Dame</a> that introduces students to the field of computer vision. The aim of computer vision is to give computers the ability to "understand" what they "see" in images and videos taken by one or more sensors (most often visible-light cameras). The goal of this course is to introduce and discuss methods for interpreting the visual information captured by machines to give them this ability.
+</p>
+<p>
+The course is divided into <b>five parts</b>. In the <b>first part</b>, we define the notion of computer vision, the progress made in this discipline in recent decades, current challenges, successful applications, and its limitations. We also discuss selected biological vision mechanisms as an inspiration to create better computer vision solutions. The <b>second part</b> explains the basics of signal processing from a computer vision perspective. This part includes image formation, image acquisition, understanding and effective use of color (and in general multi-wavelength) information, and image processing (filtering and segmentation). The <b>third part</b> focuses on the automatic recognition of patterns. It covers feature extraction and selection, texture descriptors, Bayesian inference, classification, and decision making. In this part, we will also discuss how these tasks can be solved using deep learning techniques, especially convolutional neural networks. Several meetings in this third part will be devoted to the reliability of modern deep learning-based, generative, and image-to-image translation models. The <b>fourth part</b> considers multiple-view and geometry topics in vision: motion analysis, including object tracking, projective geometry, camera geometric model, camera calibration, and 3D reconstruction.  Finally, the <b>fifth part</b> introduces a few practical applications of computer vision. One meeting at the end of the semester will be devoted to the non-technical aspects of designing trustworthy and reliable computer vision (and AI in general) systems.
+</p>
+
+<p>
+After completing this course, students will be able to understand the computer vision literature, recognize the frontiers of state-of-the-art computer vision systems, and select appropriate mathematical and software tools to develop algorithms that solve the most important computer vision problems. Practical classes will utilize high-level programming languages (Python will be our main coding language) and popular computer vision tools and machine learning packages, such as OpenCV, Keras, Tensorflow, or Pytorch, to illustrate in practice selected topics discussed in class. The goal of the semester project is to exercise the entire computer vision pipeline on a selected vision problem. This version of the course was adapted by <a href="https://www.wjscheirer.com/">Prof. Walter Scheirer</a> from the one originally developed by <a href="https://www.adamczajka.com/">Prof. Adam Czajka</a>.
+</p>
+
+</div>
+<p><img src="/teaching/static/img/teaser.png" class="pull-right" width="330" height="250" style="margin-left: 10px; margin-top: 17px;"/></p>
+<div class="row">
+<p>Upon successful completion of this course, students will be able to:</p>
+<ol>
+<li>
+<p><strong>Describe</strong> the principles of image formation and understand biological inspirations in computer vision.</p>
+</li>
+<li>
+<p><strong>Understand</strong> how images are coded and compressed.</p>
+</li>
+<li>
+<p><strong>Implement</strong> selected algorithms of image enhancement, based on point and neighborhood operations.</p>
+</li>
+<li>
+<p><strong>Design and Implement</strong> selected image segmentation methods to separate a useful part of the image from background information.</p>
+</li>
+<li>
+<p><strong>Build</strong> algorithms to extract and select appropriate image features suitable for a computer vision task being solved.</p>
+</li>
+<li>
+<p><strong>Understand</strong> pattern recognition principles and select appropriate classification techniques.</p>
+</li>
+<li>
+<p><strong>Deploy</strong> statistical methods for performance evaluation.</p>
+</li>
+<li>
+<p><strong>Understand</strong> geometrical transformations suitable for 2D and 3D images.</p>
+</li>
+<li>
+<p><strong>Use</strong> selected theoretical and programming tools, along with computer vision libraries, in developing own computer vision systems.</p>
+</li>
+</ol>
+</div>
+<div class="row">
+    <div class="page-header">
+        <h2 id="logistics"><i class="fa fa-cogs"></i> Logistics</h2>
+    </div>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+<div class="row">
+<div class="col-md-6">
+    <h3>Class Information</h3>
+    <dl>
+        <dt><i class="fa fa-clock-o"></i>Lecture</dt>
+        <dd><strong>M/W/F</strong> 12:50 PM - 1:40 PM</dd>
+
+        <dt><i class="fa fa-home"></i> Location</dt>
+        <dd>303 Cushing Hall of Engineering</dd>
+
+        <dt><i class="fa fa-slack"></i>Slack</dt>
+        <dd><a href="https://nd-cse.slack.com/messages/cse-40535-sp25/">#cse-40535-sp25</a></dd>
+    </dl>
+</div>
+<div class="col-md-6">
+    <h3>Instructor</h3>
+
+    <dl>
+        <dt><i class="fa fa-user"></i> Instructor</dt>
+        <dd><a href="http://www.wjscheirer.com">Walter Scheirer</a> (<a href="mailto:walter.scheirer@nd.edu">walter.scheirer@nd.edu</a>)</dd>
+
+        <dt><i class="fa fa-life-ring"></i> Office Hours</dt>
+        <dd><strong>M</strong> 2:00 PM - 4:00 PM, and by <strong>appointment</strong></dd>
+
+        <dt><i class="fa fa-briefcase"></i> Office Location</dt>
+        <dd>182D Fitzpatrick Hall of Engineering</dd>
+    </dl>
+</div>
+</div>
+
+<div class="row">
+    <div class="alert alert-info">
+        <h4><i class="fa fa-question"></i> Help Protocol</h4>
+        <ol class="list-inline">
+            <li><em><i class="fa fa-lightbulb-o"></i> Think</em></li>
+            <li><small><i class="fa fa-arrow-right"></i></small></li>
+            <li><strong><i class="fa fa-slack"></i> Slack</strong></li>
+            <li><small><i class="fa fa-arrow-right"></i></small></li>
+            <li><em><i class="fa fa-lightbulb-o"></i> Think</em></li>
+            <li><small><i class="fa fa-arrow-right"></i></small></li>
+            <li><strong><i class="fa fa-envelope"></i> Email</strong></li>
+            <li><small><i class="fa fa-arrow-right"></i></small></li>
+            <li><em><i class="fa fa-lightbulb-o"></i> Think</em></li>
+            <li><small><i class="fa fa-arrow-right"></i></small></li>
+            <li><strong><i class="fa fa-briefcase"></i> Office</strong></li>
+        </ol>
+    </div>
+</div>
+</div>
+
+<div class="col-md-6">
+    <h3>Teaching Assistants</h3>
+
+    <div class="row">
+      
+      <div class="col-md-6">
+          <dl>
+            <dt><i class="fa fa-user"></i> Graduate Teaching Assistant</dt>
+            <dd>Louisa Conwill (<a href="mailto:lconwill@nd.edu">lconwill@nd.edu</a>)</dd>
+            <dt><i class="fa fa-life-ring"></i> Office Hours</dt>
+            <dd><strong>W</strong> 3:30 - 5:30 PM, and by <strong>appointment</strong></dd>
+            <dt><i class="fa fa-briefcase"></i> Office Location</dt>
+            <dd>182 Fitzpatrick Hall of Engineering</dd>
+          </dl>
+      </div>
+      
+      </div><div class="row">
+    </div>
+</div>
+</div>
+
+<div class="row">
+    <div class="page-header">
+        <h2 id="schedule"><i class="fa fa-calendar"></i> Schedule</h2>
+    </div>
+</div>
+
+<style>
+table.schedule td.unit {
+    background-color: #fff;
+    border-right: 2px solid #ddd;
+    text-align: right;
+    width: 175px;
+    vertical-align: middle;
+}
+</style>
+
+<div class="row">
+    <table class="table condensed table-striped schedule">
+        <thead>
+            <tr>
+                <th class="text-center">Unit</th>
+                <th class="text-center">Date</th>
+                <th class="text-center">Topics</th>
+                <th class="text-center" style="width: 500px;">Assignment</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            
+            <tr> 
+            <td rowspan="1" class="text-strong text-primary text-center unit">Course Introduction</td>
+            
+                <td class="text-center">01/13</td>
+                <td>
+                Syllabus, Course Organization, and Graded Material
+                <a class="label label-default" href="https://drive.google.com/file/d/1vx1_0oKB2HAFolhXwfTHUmcTp_Ar_PyT/view?usp=sharing">Slides</a>
+                
+                </td>
+                <td class="text-center">
+                <a class="label label-caution" href="./homework00.html">Homework 00</a>    
+                <a class="label label-success" href="./project00.html">Project 00</a>
+                </td>
+            </tr>
+            
+    
+            
+            
+              <tr>
+              <td colspan="4" class="text-center text-strong" style="border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; padding: 4px;">Introduction to Computer Vision</td>
+              </tr>
+              
+            
+
+            
+            <tr>
+            
+                <td rowspan="2" class="text-strong text-primary text-center unit">Field of Computer Vision</td>
+            
+                <td class="text-center">01/15</td>
+                <td>
+                Introduction to Computer Vision (Part 1)
+                <a class="label label-default" href="https://drive.google.com/file/d/1u5-JkvVwsSr_aqF7ogFOaEcAQdLMljo4/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-caution" href="./homework01.html">Homework 01</a>
+                Torralba et al. Notation and Chpt. 2; Optional: <a href="https://szeliski.org/Book/">Szeliski</a> Sec. 1.1; <a href="https://www.cl.cam.ac.uk/teaching/2021/CompVision/CompVisLectureNotes2021.pdf">Daugman</a> pp. 5-20
+                </td>
+
+            </tr>
+
+            <tr>            
+                <td class="text-center">01/17</td>
+                <td>
+                Introduction to Computer Vision (Part 2) 
+                <a class="label label-default" href="https://drive.google.com/file/d/1u4hpY3lpUvXvn5zNfwkTN9PvnqfEkFOz/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+
+                </td>
+
+            </tr>
+            
+
+            <tr>            
+                <td rowspan="3" class="text-strong text-primary text-center unit">Bioligical Vision</td>
+
+                <td class="text-center">01/20</td>
+                <td>
+                Martin Luther King Jr. Day (No Class)
+                </td>
+                <td class="text-center">
+                
+                </td>
+
+            </tr>    
+
+            <tr>
+                        
+                <td class="text-center">01/22</td>
+                <td>
+                Human Vision and Bio Inspirations in CV (Part 1)
+                <a class="label label-default" href="https://drive.google.com/file/d/1GILVtvVFpdHvfZHXC8mBChY_75Knx5fx/view?usp=sharing">Slides</a> 
+                </td>
+                <td class="text-center">
+                Torralba et al. Chpt. 1; Optional: <a href="https://szeliski.org/Book/">Szeliski</a> Sec. 1.2; <a href="https://www.cl.cam.ac.uk/teaching/2021/CompVision/CompVisLectureNotes2021.pdf">Daugman</a> pp. 29-55
+                </td>
+
+            </tr>
+
+           
+            <tr>            
+                <td class="text-center">01/24</td>
+                <td>
+                Human Vision and Bio Inspirations in CV (Part 2)
+                <a class="label label-default" href="https://drive.google.com/file/d/1KzQsjeNo9vEt1h5yxbt_ZOEQeWJTT6hp/view?usp=sharing">Slides</a> 
+                </td>
+                <td class="text-center">
+                <a class="label label-caution" href="./homework02.html">Homework 02</a>
+                <a class="label label-success" href="./project01.html">Project 01</a>
+                <a href="https://thecvf-art.com/">CVPR 2024 AI Art Gallery</a>
+                </td>
+
+            </tr>
+<tr>
+
+<tr>
+              <td colspan="4" class="text-center text-strong" style="border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; padding: 4px;">Digital Image Analysis</td>
+              </tr>
+
+                <td rowspan="4" class="text-strong text-primary text-center unit">Image Acquisition and Formation</td>
+
+                <td class="text-center">01/27</td>
+                <td>
+                Image Acquisition
+                <a class="label label-default" href="https://drive.google.com/file/d/1LrCM0-AUkirlnzM03RCCKidIVYDCJsAn/view?usp=sharing">Slides</a>
+	            </td>
+                <td class="text-center">
+                Torralba et al. Chpts. 3, 5, 6, 7; Optional: <a href="https://www.bhphotovideo.com/explora/photography/tips-and-solutions/understanding-exposure-part-1-the-exposure-triangle">Understanding Exposure</a>
+                </td>
+            </tr>
+
+            <tr>
+
+                <td class="text-center">01/29</td>
+                <td>
+                Color and Multispectral Imaging (Part 1)
+                <a class="label label-default" href="https://drive.google.com/file/d/17YogcmLlJr_PFq7a96-a2QjUcJ-NEZ74/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                Torralba et al. Chpt. 8
+                </td>
+            </tr>
+
+            <tr>
+
+                <td class="text-center">01/31</td>
+                <td>
+                Color and Multispectral Imaging (Part 2)
+                <a class="label label-default" href="https://drive.google.com/file/d/1ra0je_1O8lCj4cRtFfinYFgB4me_uUIP/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-primary" href="https://www.wjscheirer.com/teaching/cv/cv-spring-2025/practical00.html">Practical 00 (Before-Class)</a>
+                Optional: <a href="https://szeliski.org/Book/">Szeliski</a> Sec. 2.3.2
+                </td>
+            </tr> 
+
+            <tr>
+
+                <td class="text-center">02/03</td>
+                <td>
+                <a class="label label-primary" href="https://www.wjscheirer.com/teaching/cv/cv-spring-2025/practical00_class.html">Practical 00 (In-Class)</a>
+                </td>
+                <td class="text-center">
+                
+                </td>
+            </tr> 
+            
+    <tr>
+            
+                <td rowspan="9" class="text-strong text-primary text-center unit">Image Processing</td>
+            
+                <td class="text-center">02/05</td>
+                <td>
+                Point Operators (Part 1)
+                <a class="label label-default" href="https://drive.google.com/file/d/1Rfy-wL9oV1B9xU-aZJKk-0HzeuhBlzFR/view?usp=sharing">Slides</a> 
+                </td>
+                <td class="text-center">
+                <a class="label label-caution" href="./homework03.html">Homework 03</a>
+                Optional: <a href="https://szeliski.org/Book/">Szeliski</a> Sec. 3.1.4
+                </td>
+
+            </tr>
+
+             <tr>            
+                <td class="text-center">02/07</td>
+                <td>
+                Point Operators (Part 2)
+                <a class="label label-default" href="https://drive.google.com/file/d/1LiyCAJriCFRcKfPCu0j8aL9_cwjsne1g/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-success" href="./project02.html">Project 02</a>  
+                </td>
+
+            </tr>
+
+             <tr>            
+                <td class="text-center">02/10</td>
+                <td>
+                Neighborhood Operators (Part 1)
+                <a class="label label-default" href="https://drive.google.com/file/d/1VHn-0Y_dSwDDxGoyqQmuNezWaqKUYJR1/view?usp=sharing">Slides</a> 
+                </td>
+                <td class="text-center">
+                Torralba et al. Chpts. 15, 16; Optional: <a href="https://www.youtube.com/watch?v=spUNpyF58BY">But what is the Fourier Transform?</a>
+                </td>
+
+            </tr>
+
+           <tr>            
+                <td class="text-center">02/12</td>
+                <td>
+                Neighborhood Operators (Part 2)
+                <a class="label label-default" href="https://drive.google.com/file/d/1v2STup5phJo5k4RFT_qviRE1m0kyiTc6/view?usp=sharing">Slides</a> 
+                </td>
+                <td class="text-center">
+                Torralba et al. Chpts. 17, 18
+                </td>
+
+            </tr>
+
+             <tr>            
+                <td class="text-center">02/14</td>
+                <td>
+               Neighborhood Operators (Part 3)
+               <a class="label label-default" href="https://drive.google.com/file/d/1U8qNcwUwIrn2Vt_OowgwKeKeRRL2o0T2/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-caution" href="./homework04.html">Homework 04</a>
+                </td>
+
+            </tr>
+
+            <tr>            
+                <td class="text-center">02/17</td>
+                <td>
+               Edge Detection and Linking (Part 1)
+               <a class="label label-default" href="https://drive.google.com/file/d/1XPI1rwsp5rHIr6WpsHEjIgo8DSt52XWx/view?usp=sharing">Slides</a> 
+                </td>
+                <td class="text-center">
+                <a class="label label-primary" href="https://www.wjscheirer.com/teaching/cv/cv-spring-2025/practical01.html">Practical 01 (Before-Class)</a>
+                </td>
+            </tr>
+
+            <tr>            
+                <td class="text-center">02/19</td>
+                <td>
+               Edge Detection and Linking (Part 2)
+               <a class="label label-default" href="https://drive.google.com/file/d/1yMYTcrMm5rLdQ-UbSnXxb5ImRxbmG7rZ/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                Torralba et al. Chpt. 41; Optional: <a href="https://szeliski.org/Book/">Szeliski</a> Sec. 7.4.2; <a href="https://www.cl.cam.ac.uk/teaching/2021/CompVision/CompVisLectureNotes2021.pdf">Daugman</a> pp. 63-76
+                </td>
+
+            </tr>
+
+            <tr>            
+                <td class="text-center">02/21</td>
+                <td>
+               Image Segmentation
+               <a class="label label-default" href="https://drive.google.com/file/d/15m66B_v4P897fiZ2KwgN4LpVy7RKdJuP/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-caution" href="./homework05.html">Homework 05</a>
+                Torralba et al. Chpt. 31; Optional: <a href="https://link.springer.com/content/pdf/10.1007/BF00133570.pdf">Snakes: Active Contour Models</a>
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td class="text-center">02/24</td>
+                <td>
+                <a class="label label-primary" href="https://www.wjscheirer.com/teaching/cv/cv-spring-2025/practical01_class.html">Practical 01 (In-Class)</a>
+                </td>
+                <td class="text-center">
+                
+                </td>
+            </tr> 
+
+            <tr>
+              <td colspan="4" class="text-center text-strong" style="border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; padding: 4px;">Visual Recognition</td>
+              </tr>
+
+            
+            <tr>
+
+            
+                <td rowspan="3" class="text-strong text-primary text-center unit">Feature Extraction</td>
+            
+                <td class="text-center">02/26</td>
+                <td>
+                Extraction of Visual Features (Part 1)
+                <a class="label label-default" href="https://drive.google.com/file/d/1SRDQEmZIdsFBLevLn4JTouKwG3vD6WZA/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                
+                </td>
+            </tr>
+
+           <tr>
+
+            <td class="text-center">02/28</td>
+                <td>
+                Extraction of Visual Features (Part 2)
+                <a class="label label-default" href="https://drive.google.com/file/d/1KvBXQZVqGCYQE6moFKqLDFIxUxPOR9_8/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                Torralba et al. Chpt. 41; Optional: <a href="https://szeliski.org/Book/">Szeliski</a> Sec. 7.1.1, 7.1.2; <a href="https://docs.opencv.org/4.8.0/da/df5/tutorial_py_sift_intro.html">Introduction to SIFT</a> 
+                </td>
+            </tr>
+
+            <td class="text-center">03/03</td>
+                <td>
+                Extraction of Visual Features (Part 3)
+                <a class="label label-default" href="https://drive.google.com/file/d/1kpD9lX26J3R1GelQsyx-TP68RpFGx43X/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-primary" href="https://www.wjscheirer.com/teaching/cv/cv-spring-2025/practical02.html">Practical 02 (Before-Class)</a>
+                </td>
+            </tr>
+
+        
+            <tr>
+
+                <td rowspan="5" class="text-strong text-primary text-center unit">Geometric Transformations</td>
+            
+                <td class="text-center">03/05</td>
+                <td>
+                Geometric Transformations
+                <a class="label label-default" href="https://drive.google.com/file/d/1o3_8sLrK4PbH9pCdAF7opvhvrnsthLgY/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-caution" href="./homework06.html">Homework 06</a>
+                Torralba et al. Chpt. 38; Optional: <a href="https://szeliski.org/Book/">Szeliski</a> Sec. 2.1.1
+                </td>
+            </tr>
+            
+            <tr>
+            
+                <td class="text-center">03/07</td>
+                <td>
+                <a class="label label-primary" href="https://www.wjscheirer.com/teaching/cv/cv-spring-2025/practical02_class.html">Practical 02 (In-Class)</a>                
+                </td>
+                <td class="text-center">                
+                </td>
+            </tr>
+
+            <tr>
+            
+                <td class="text-center">03/10</td>
+                <td>
+                Spring Break (No Class)               
+                </td>
+                <td class="text-center">                
+                </td>
+            </tr>
+
+            <tr>
+            
+                <td class="text-center">03/12</td>
+                <td>
+                Spring Break (No Class)               
+                </td>
+                <td class="text-center">                
+                </td>
+            </tr>
+            
+            <tr>
+            
+                <td class="text-center">03/14</td>
+                <td>
+                Spring Break (No Class)               
+                </td>
+                <td class="text-center">                
+                </td>
+            </tr>
+
+            <tr>
+
+                <td rowspan="3" class="text-strong text-primary text-center unit">Feature Classification and Evaluation</td>
+            
+                <td class="text-center">03/17</td>
+                <td>
+                Feature Classification (Part 1)
+                <a class="label label-default" href="https://drive.google.com/file/d/1MX_Zx13NjktDT53vUGE4QQXyD23Jc10e/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-success" href="./project03.html">Project 03</a>
+                Torralba et al. Chpt. 9; Optional: <a href="https://www.cl.cam.ac.uk/teaching/2021/CompVision/CompVisLectureNotes2021.pdf">Daugman</a> pp. 150-167
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="text-center">03/19</td>
+                <td>
+                Feature Classification (Part 2)
+                <a class="label label-default" href="https://drive.google.com/file/d/1TlGg5m6iGcqoc7pUxzN-SPvWuV6Qjb2M/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-caution" href="./homework07.html">Homework 07</a>
+		         Torralba et al. Chpt. 10; Optional: <a href="https://pub.ista.ac.at/~chl/papers/lampert-fnt2009.pdf">Kernel Methods in Computer Vision</a>
+                </td>
+            </tr>
+           
+            <tr>
+                <td class="text-center">03/21</td>
+                <td>
+                Feature Classification (Part 3)
+                <a class="label label-default" href="https://drive.google.com/file/d/1H-7f8BYJ0g26fb6QJpRR943IokZiA4v3/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+		        Torralba et al. Chpt. 11
+                </td>
+            </tr>
+
+
+              <tr>
+
+                <td rowspan="7" class="text-strong text-primary text-center unit">Deep Learning</td>
+
+                <td class="text-center">03/24</td>
+                <td>
+                Deep Learning in Computer Vision (Part 1)
+                <a class="label label-default" href="https://drive.google.com/file/d/1HvTFnPaREQBvjQEKeegL119MLCYh-rDJ/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-primary" href="https://www.wjscheirer.com/teaching/cv/cv-spring-2025/practical03.html">Practical 03 (Before-Class)</a>
+                Torralba et al. Chpts. 12, 14, <a href="https://colab.research.google.com/drive/1SUGeUloK9F_nVtXD4vJAChhGb_d5Gk7F?usp=sharing">CNN Demo</a>; Optional: <a href="https://www.deeplearningbook.org/contents/mlp.html">Deep Feedforward Networks</a>
+                </td>
+            </tr>
+
+             <tr>
+
+                <td class="text-center">03/26</td>
+                <td>
+                <a class="label label-primary" href="https://www.wjscheirer.com/teaching/cv/cv-spring-2025/practical03_class.html">Practical 03 (In-Class)</a>
+                </td>
+                <td class="text-center">
+                </td>
+            </tr>
+
+             <tr>
+
+                <td class="text-center">03/28</td>
+                <td>
+                Deep Learning in Computer Vision (Part 2)
+                <a class="label label-default" href="https://drive.google.com/file/d/15RV85BRyxb8wwH5F6aCeTpN_9s4kS9n0/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-caution" href="./homework08.html">Homework 08</a>
+                Torralba et al. Chpts. 24-26
+                </td>
+            </tr>
+
+            <tr>
+
+                <td class="text-center">03/31</td>
+                <td>
+                Deep Learning in Computer Vision (Part 3)
+                <a class="label label-default" href="https://drive.google.com/file/d/1eoth0qGXGA0NPWxVLC2DC59tmJBouCiG/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                </td>
+            </tr>
+
+            <tr>
+
+                <td class="text-center">04/02</td>
+                <td>
+                Object Detection and Tracking (Part 1)
+                <a class="label label-default" href="https://drive.google.com/file/d/1gK2lPq22SgL9VnEZpr4hiR4hgcDuInDs/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                Torralba et al. Chpt. 50; Optional: <a href="https://ieeexplore.ieee.org/abstract/document/10028728">Object Detection in 20 Years: A Survey</a>
+                </td>
+            </tr>
+
+            <tr>
+
+                <td class="text-center">04/04</td>
+                <td>
+                Object Detection and Tracking (Part 2)
+                <a class="label label-default" href="https://drive.google.com/file/d/1hRcPVrUQ4ivGgQXh9Pe1WXMb8WxUCclL/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-caution" href="./homework09.html">Homework 09</a>
+                Torralba et al. Chpt. 46; Optional: <a href="https://www.mathworks.com/videos/series/understanding-kalman-filters.html">Understanding Kalman Filters</a>
+                </td>
+            </tr>
+
+             <tr>
+
+                <td class="text-center">04/07</td>
+                <td>
+                Generative Models
+                <a class="label label-default" href="https://drive.google.com/file/d/1b0uaFUBtJbq8Uk0AdjCTv3Lb8xsOaktW/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-success" href="./project04.html">Project 04</a>
+                Torralba et al. Chpt. 32
+                </td>
+            </tr>
+
+          <tr>
+             <td colspan="4" class="text-center text-strong" style="border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; padding: 4px;">3D Computer Vision</td>
+              </tr>
+
+            <tr>
+
+                <td rowspan="1" class="text-strong text-primary text-center unit">Camera Calibration</td>
+
+                <td class="text-center">04/09</td>
+                <td>
+                Camera Calibration
+                <a class="label label-default" href="https://drive.google.com/file/d/1oN7Zh0YDgAoqxqvM2oKEEFiu9Jt01pnS/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                Torralba et al. Chpt. 39; Optional: <a href="https://www.mathworks.com/help/vision/ug/camera-calibration.html">What Is Camera Calibration?</a>
+                </td>
+            </tr>
+
+<tr>
+                <td rowspan="2" class="text-strong text-primary text-center unit">3D Reconstruction</td>
+
+                <td class="text-center">04/11</td>
+                <td>
+                    3D Reconstruction (Part 1)
+                    <a class="label label-default" href="https://drive.google.com/file/d/1JSS9q2KmoloIcC8xCO9iCJABM7HlvhB8/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+		        Torralba et al. Chpt. 40; Optional: <a href="https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html">Camera Calibration and 3D Reconstruction</a>
+                </td>
+            </tr>
+
+<tr>
+                <td class="text-center">4/14</td>
+                <td>
+                    3D Reconstruction (Part 2)
+                    <a class="label label-default" href="https://drive.google.com/file/d/177STxmEWsTJis6hg49k0_SEwobUOOWaS/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-primary" href="https://www.wjscheirer.com/teaching/cv/cv-spring-2025/practical04.html">Practical 04 (Before-Class)</a>
+                Torralba et al. Chpt. 43; Optional: <a href="https://szeliski.org/Book/">Szeliski</a> pp. 724-739
+                </td>
+            </tr>
+
+              <tr>
+              <td colspan="4" class="text-center text-strong" style="border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; padding: 4px;">Applications of Computer Vision</td>
+              </tr>
+              
+            <tr>
+
+                <td rowspan="7" class="text-strong text-primary text-center unit">Applications</td>
+            
+                <td class="text-center">04/16</td>
+                <td>
+                <a class="label label-primary" href="https://www.wjscheirer.com/teaching/cv/cv-spring-2025/practical04_class.html">Practical 04 (In-Class)</a>
+                
+                </td>
+                <td class="text-center">
+		
+                </td>
+            </tr>
+            
+            
+             <tr>
+
+                <td class="text-center">04/18</td>
+                <td>
+                Easter Break (No Class)
+                </td>
+                <td class="text-center">
+                
+                </td>
+            </tr> 
+
+            <tr>
+
+                <td class="text-center">04/21</td>
+                <td>
+               Easter Break (No Class)
+                </td>
+                <td class="text-center">
+                
+                </td>
+            </tr>
+
+            <tr>
+                        
+                <td class="text-center">04/23</td>
+                <td>
+               Human Biometrics
+               <a class="label label-default" href="https://drive.google.com/file/d/1sf4ZUFKfBj2EAOEPGmcMm-JedWeJl-IX/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a class="label label-caution" href="./homework10.html">Homework 10</a>
+                <a class="label label-success" href="./project05.html">Project 05</a>
+                </td>
+            </tr>
+            
+            <tr>
+            
+                <td class="text-center">04/25</td>
+                <td>
+                Digital Humanities
+                <a class="label label-default" href="https://drive.google.com/file/d/1ujZKEmefyCoPErJIrWdIpWux1MVSrcCn/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9465770">Measuring Human Perception to Improve Handwritten Document Transcription</a>
+                </td>
+            </tr>
+            
+            <tr>
+            
+                <td class="text-center">04/28</td>
+                <td>
+                Computer Vision for Ecology
+                <a class="label label-default" href="https://drive.google.com/file/d/1-mt8cndZ7ZYfJaILTyEn7ZdRHm7jKIZB/view?usp=sharing">Slides</a>
+                </td>
+                <td class="text-center">
+                <a href="https://www.nature.com/articles/s41467-022-27980-y">Perspectives in Machine Learning for Wildlife Conservation</a>
+                </td>
+            </tr>
+        
+          <tr>
+            
+                <td class="text-center">04/30</td>
+                <td>
+                Review for Final Exam
+                </td>
+                <td class="text-center">
+		
+                </td>
+            </tr>
+            
+            <tr>
+                
+                <td rowspan="1" class="text-strong text-primary text-center unit">Final Exam</td>
+            
+                <td class="text-center"><span class="label label-danger">05/05 4:15-6:15pm</span></td>
+                <td>
+                303 Cushing Hall
+                </td>
+                <td class="text-strong">
+                
+                
+                </td>
+            </tr>
+            
+            
+
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="page-header">
+        <h2 id="Requirements"><i class="fa fa-balance-scale"></i> Requirements</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+    <h3>Coursework</h3>
+    <table class="table table-condensed table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="text-center">Component</th>
+                <th class="text-center">Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="label label-info">Participation</span> Participation in class, office hours, and slack chats.</td>
+                <td class="text-center">200</td>
+            </tr>
+            <tr>
+                <td><span class="label label-caution">Homeworks</span> Homework assignments.</td>
+                <td class="text-center">10 &times; 100</td>
+            </tr>
+            <tr>
+                <td><span class="label label-primary">Practicals</span> In-class programming projects.</td>
+                <td class="text-center">5 &times; 200</td>
+            </tr>
+            <tr>
+                <td><span class="label label-success">Project</span> Final group project.</td>
+                <td class="text-center">500</td>
+            </tr>
+            <tr>
+                <td><span class="label label-danger">Exam</span> Final Exam.</td>
+                <td class="text-center">300</td>
+            </tr>
+            <tr>
+                <td class="text-strong text-right">Total</td>
+                <td class="text-strong text-center">3000</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="col-md-6">
+    <h3>Grading</h3>
+    <table class="table table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th class="text-center">Grade</th>
+                <th class="text-center">Points</th>
+                <th class="text-center">Grade</th>
+                <th class="text-center">Points</th>
+                <th class="text-center">Grade</th>
+                <th class="text-center">Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="success">
+                <td></td>
+                <td></td>
+                <td class="text-center text-strong">A</td>
+                <td class="text-center">2790-3000</td>
+                <td class="text-center text-strong">A-</td>
+                <td class="text-center">2700-2789</td>
+            </tr>
+            <tr class="info">
+                <td class="text-center text-strong">B+</td>
+                <td class="text-center">2601-2699</td>
+                <td class="text-center text-strong">B</td>
+                <td class="text-center">2499-2600</td>
+                <td class="text-center text-strong">B-</td>
+                <td class="text-center">2400-2498</td>
+            </tr>
+            <tr class="warning">
+                <td class="text-center text-strong">C+</td>
+                <td class="text-center">2301-2399</td>
+                <td class="text-center text-strong">C</td>
+                <td class="text-center">2199-2300</td>
+                <td class="text-center text-strong">C-</td>
+                <td class="text-center">2100-2198</td>
+            </tr>
+            <tr class="danger">
+                <td class="text-center text-strong">D</td>
+                <td class="text-center">1950-2099</td>
+                <td class="text-center text-strong">F</td>
+                <td class="text-center">0-1949</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="alert alert-info">
+            <h4><i class="fa fa-calendar"></i> Due Dates</h4>
+            <p>
+            All <b>Assignments</b> are to be submitted to
+              your own <b>private</b> <a
+              href="https://github.com/">GitHub</a> repository, unless
+              specified otherwise.
+            <ul>
+            <li><b>Homeworks</b> are due by <b>11:59pm</b> one week following the release of the assignment.</li>
+            <li><b>Practicals</b> have two parts. The before-class component is due by <b>12:50pm</b> on the day of the in-class work session. The in-class component is due by <b>11:59pm</b> on the assigned deadline.</li>
+            <li><b>Project</b> deliverables are due by <b>11:59pm</b> on the assigned deadline.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+      <h3>Policies</h3>
+      <div class="row">
+          <div class="col-md-4">
+          <h4>Participation</h4>
+          <p>
+          In-person attendance in mandatory. Students are expected to attend and contribute regularly in class. This
+          means answering questions in class, participating in discussions, and
+          helping other students.
+          </p>
+          <p>
+          Foreseeable absences should be discussed with the instructor ahead of time.
+          </p>
+          <h4>Students with Disabilities</h4>
+          <p>
+          Any student who has a documented disability and is registered with Sara Bea Accessibility Services should speak with the professor as soon as possible regarding accommodations. Students who are not registered should contact <a href="https://supportandcare.nd.edu/for-students/current-students/accessibility-support/">Sara Bea Accessibility Services</a>.
+          </p>
+           <h4>Academic Honesty</h4>
+          <p>
+          Any <b>academic misconduct</b> in this course is considered a
+          <b>serious offense</b>, and the strongest possible academic
+          penalties will be pursued for such behavior. Students may discuss
+          high-level ideas with other students, but at the time of
+          implementation (i.e., programming), each person must do his/her
+          own work. Use of the Internet as a reference is allowed but
+          directly copying code or other information is cheating. It is
+          cheating to copy, to allow another person to copy, all or part of
+          an exam or a assignment, or to fake program output. It is also a
+          violation of the <a
+          href="https://honorcode.nd.edu/">Undergraduate Academic Code of
+          Honor</a> to observe and then fail to report academic dishonesty.
+          You are responsible for the security and integrity of your own
+          work.
+          </p>
+          </div>
+          <div class="col-md-4">
+          <h4>Policy on Generative AI</h4>
+          <p>
+            I am a big advocate of the responsible use of modern AI tools, including generative AI models that are in the headlines (this is a computer vision course, after all). I will create opportunities to use the output of these systems in assignments, and we will discuss their usefulness for solving computer vision problems in class. But you must not use generative AI to simply "do your work for you" (e.g., generate ready-to-submit homework answers, or code snippets). This is not what I would call "responsible use" and it is harmful to your long-term learning goals. The prose generated by ChatGPT is spelled and punctuated correctly and has proper grammar, but it frequently concocts false information, and supports its arguments with very shallow reasoning that relies on description rather than inference. Use it as a "brainstorming buddy" (ChatGPT's confabulations can be very inspirational as they may take you to ideas you have never thought about). Or use it to simply correct your grammar / language. But do not cheat (see the the Academic Honesty section of this page).
+        </p>
+          <h4>Late Work</h4>
+          <p>
+          In the case of a serious illness or other excused absence, as defined by
+          university policies, coursework submissions will be accepted late by the
+          same number of days as the excused absence.
+          Otherwise, a <b>late penalty</b>, as determined by the
+          instructor, will be assessed to any late submission of an
+          assignment.  In general, the late penality is <tt>-10</tt> points off
+          for each day after the assigned deadline.
+          The instructor reserves the right to refuse any unexcused late
+          work.
+          </p>
+          </div>
+          <div class="col-md-4">
+          <h4>Classroom Recording</h4>
+          <p>
+          Notre Dame has implemented a classroom recording system. This system allows us to record and distribute lectures to you in a secure environment. You can watch these recordings on your computer, tablet, or smartphone. The recordings can be accessed via a request made to the instructor.</p>
+
+<p>Because the instructor reserves the right to record in the classroom on select occasions, your questions and comments may be recorded. (Video recordings typically only capture the front of the classroom.) If you have any concerns about your voice or image being recorded, please speak to me to determine an alternative means of participating. No content will be shared with individuals outside of your course without your permission except for faculty and staff that need access for support or specific academic purposes.</p>
+
+<p>These recordings are jointly copyrighted by the University of Notre Dame and your instructor. Posting them to other websites, including YouTube, Facebook, Vimeo, or elsewhere without express, written permission may result in disciplinary action and possible civil prosecution.</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="alert alert-danger">
+            <h4><i class="fa fa-warning"></i>CSE Guide to the Honor Code</h4>
+            <p>
+            For the assignments in this class, you may discuss with other
+            students and consult printed and online resources.  You may
+            quote from books and online sources as long as you <b>cite them
+            properly</b>.  However, you may <b>not</b> look at another
+            student's solution, and you may <b>not</b> copy solutions.
+            </p>
+            <center>
+            <img src="/teaching/static/img/hc.png" width="255" height="80" style="padding: 5px" class="img-responsive">
+            </center>
+            <p>
+            For further guidance please refer to the <a
+            href="https://cse.nd.edu/undergraduate/cse-guide-to-the-honor-code/">CSE Honor
+            Code</a> or ask the instructor.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="page-header">
+        <h2 id="resources"><i class="fa fa-external-link"></i> Resources</h2>
+    </div>
+</div>
+
+<div class="row">
+<div class="col-md-12">
+
+<h3>Textbook</h3>
+<p></div>
+<div class="col-md-4" markdown="1">
+<div class="thumbnail">
+  <a href="https://mitpress.mit.edu/9780262048972/foundations-of-computer-vision/"><img src="/teaching/static/img/9780262048972.png" width="240" height="320"></a>
+  <div class="caption">
+      <h4>Foundations of Computer Vision</h4>
+      <p>Antonio Torralba, Phillip Isola, and William T. Freeman
+      </p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col-md-4" markdown="1">
+
+<h3>Supplemental Readings</h3>
+<ul>
+<li><a href="https://szeliski.org/Book/"><i>Computer Vision: Algorithms and Applications</i>, 2nd Ed.</a></li>
+<li><a href="https://openaccess.thecvf.com/menu">CVF Open Access Archive</a></li>
+<li><a href="https://www.cl.cam.ac.uk/~jgd1000/">John Daugman's Lecture Notes</a></li>
+<li><a href="https://homepages.inf.ed.ac.uk/rbf/CVonline/">CVonline</a></li>
+<li><a href="https://www.robots.ox.ac.uk/~vgg/hzbook/"><i>Multiple View Geometry in Computer Vision</i>, 2nd Ed.</a></li>
+</ul>
+<h3>Git Tutorials</h3>
+<ul>
+<li><a href="https://git-scm.com/">Git-Scm</a></li>
+<li><a href="https://git-scm.com/book/en/v2">Pro Git</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials">Atlassian Getting Started Git Tutorials</a></li>
+<li><a href="http://git-scm.com/docs/gittutorial">gittutorial</a></li>
+<li><a href="https://try.github.io/levels/1/challenges/1">Code School - Try Git</a></li>
+<li><a href="http://www.vogella.com/tutorials/Git/article.html">Git - Tutorial</a></li>
+<li><a href="http://pcottle.github.io/learnGitBranching/">Learn Git Branching</a>
+</div>
+<div class="col-md-4" markdown="1"></li>
+</ul>
+<h3>Datasets</h3>
+<ul>
+<li><a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10 and CIFAR-100</a></li>
+<li><a href="http://www.image-net.org/">ImageNet</a></li>
+<li><a href="http://cocodataset.org/">Common Objects in Context (COCO)</a></li>
+<li><a href="https://storage.googleapis.com/openimages/web/index.html">Open Images</a></li>
+<li><a href="https://www.cvlibs.net/datasets/kitti/">KITTI Vision Benchmark Suite</a></li>
+<li><a href="https://www.cityscapes-dataset.com/">Cityscapes</a></li>
+</ul>
+<h3>OpenCV Tutorials</h3>
+<ul>
+<li><a href="https://opencv.org/">OpenCV Library</a></li>
+<li><a href="https://docs.opencv.org/4.x/d9/df8/tutorial_root.html">OpenCV Tutorials (Official)</a></li>
+<li><a href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html">OpenCV Python Tutorials (Official)</a></li>
+<li><a href="https://pythonprogramming.net/loading-images-python-opencv-tutorial/">OpenCV with Python</a></li>
+<li><a href="https://www.oreilly.com/library/view/learning-opencv-3/9781491937983/"><i>Learning OpenCV 3</a></i></a>
+</div>
+<div class="col-md-4" markdown="1"></li>
+</ul>
+<h3>PyTorch Tutorials</h3>
+<ul>
+<li><a href="https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html">PyTorch Basics</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/data_loading_tutorial.html">Data Loading and Processing</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/pytorch_with_examples.html">Learning PyTorch with Examples</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html">Transfer Learning</a></li>
+<li><a href="https://pytorch.org/tutorials/beginner/saving_loading_models.html">Saving and Loading Models</a></li>
+</ul>
+<h3>Keras / Tensorflow Tutorials</h3>
+<ul>
+<li><a href="https://keras.io/">Keras</a></li>
+<li><a href="https://www.tensorflow.org/">Tensorflow</a></li>
+<li><a href="https://keras.io/guides/">Developer Guides (Official)</a></li>
+<li><a href="https://www.manning.com/books/deep-learning-with-python-second-edition"><i>Deep Learning with Python</i>, 2nd Ed.</a></li>
+<li><a href="https://github.com/fchollet/keras-resources">François Chollet's List of Keras Resources</a></li>
+<li><a href="https://www.tensorflow.org/tutorials">Tensorflow Tutorials (Official)</a>
+</div></li>
+</ul>
+</div>
+</div>
+
+
+	    <div class="row">
+		<hr/>
+
+		<div class="visible-xs visible-sm">
+		    <ul class="nav nav-pills pull-right">
+			
+			<li><a href="#logistics"><i class="fa fa-cogs"></i> <span class="visible-md-inline visible-lg-inline">Logistics</span></a></li>
+			
+			<li><a href="#schedule"><i class="fa fa-calendar"></i> <span class="visible-md-inline visible-lg-inline">Schedule</span></a></li>
+			
+			<li><a href="#Requirements"><i class="fa fa-balance-scale"></i> <span class="visible-md-inline visible-lg-inline">Requirements</span></a></li>
+			
+			<li><a href="#resources"><i class="fa fa-external-link"></i> <span class="visible-md-inline visible-lg-inline">Resources</span></a></li>
+			
+		    </ul>
+		</div>
+
+		<footer class="text-center">
+		    <p class="text-muted">
+		    <small>
+		    Built using
+		    <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>,
+		    <a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a>, and
+		    <a href="http://www.python.org/">Python</a>.
+		    <br/>
+                    Web page design is courtesy of <a href="https://www3.nd.edu/~pbui/">Peter Bui</a><br/>
+		    &copy; 2025 <a href="http://www.nd.edu">University of Notre Dame</a>
+		    </small>
+		    </p>
+		</footer>
+	    </div>
+
+	</div> <!-- /container -->
+
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	
+    </body>
+</html>

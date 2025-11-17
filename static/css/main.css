@@ -1,0 +1,259 @@
+/* Turquoise Waters */
+:root {
+
+    --header: #111d13ff;
+
+    --title-super-dark: #111d13ff;
+    --title-dark: #415d43ff; 
+    --title-light: #709775ff; 
+    --title-super-light: #DAF7E1ff; 
+    
+    --emphasis-1: #709775ff;
+    --emphasis-2: #8fb996ff;
+      
+    --background-3: #F6FFF4ff;
+    --background-2: #EFF6EE;
+    --background-1: white;
+
+    --text-dark: black;
+    --text-light: white; 
+
+}
+
+/* --- Basic Body & Font Styling --- */
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-1);
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--title-super-dark);
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--title-super-dark);
+}
+
+h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: var(--title-dark);
+}
+
+footer {
+    margin-top: 0;
+}
+
+/* --- 1. Top Header Styling --- */
+.top-header {
+    background-color: var(--header);
+    color: var(--background-2);
+    padding: 15px 40px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 15px;
+    column-gap: 15px;
+}
+
+.top-header h1 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.8em;
+}
+
+.top-header h4 {
+    color: var(--background-2);
+}
+
+
+/* --- Header Navigation Buttons --- */
+.main-nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: var(--background-3);
+    color: var(--header);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--title-dark);
+    color: var(--text-light);
+}
+
+
+/* --- 2. Main Content Layout --- */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    padding-bottom: 30px;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: var(--background-2);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+
+/* --- 3. Left Column (Image + Contact) --- */
+.left-column {
+    flex: 1;
+    /* CHANGED: Made the min-width slightly smaller for more flexibility */
+    min-width: 200px; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-container img {
+    width: 70%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.contact-box {
+    background-color: var(--background-2);
+    border: 1px solid var(--background-1);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.contact-box p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* --- 4. Right Side (Text) --- */
+.right-column {
+    flex: 2;
+    /* ADDED: This tells the text to wrap before it gets too squished.
+      The stacking will now happen naturally when the total width
+      is less than (250px + 320px + 20px gap)
+    */
+    min-width: 320px;
+}
+
+.text-container h2 {
+    margin-top: 0;
+}
+
+.text-container p {
+    text-align: justify;
+}
+
+#text-container-spanish p {
+    font-size: 0.9em;
+}
+
+#text-container-english p {
+    font-size: 0.96em;
+}
+
+
+/* --- 5. Logo Styling --- */
+.logo-top-right {
+    float: right;
+    display: block;   /* Makes the link behave like a block for styling */
+    
+    width: 40px;      /* The width of the button */
+    margin: 0px 0px 0px 5px;
+    padding: 10px 18px;
+
+    background-color: var(--background-3);
+    color: var(--title-super-dark);
+    
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    opacity: 1;
+    transition: opacity 0.3s ease; /* Adds a nice fade-in effect on hover */
+}
+
+/* Add a hover effect for the button */
+.logo-top-right:hover {
+    opacity: 1.0; /* Makes it fully visible when you hover */
+    background-color: var(--emphasis-1);
+}
+
+/* This new rule styles the IMAGE *inside* the link */
+.logo-top-right img {
+    width: 100%;    /* Makes the image fill the <a> tag */
+    height: auto;
+    display: block; /* Removes any extra spacing under the image */
+}
+
+.logo-bottom-right-abs {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    margin: 0px;
+    padding: 0px;
+
+    width: 200px;
+    height: auto;
+    opacity: 0.8;
+}
+
+
+/* --- 6. Additional Styling --- */
+.emphasis {
+    color: var(--emphasis-1)
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+  color: #999999;
+}
+
+.hidden {
+    display: none
+}
+
+.space-right {
+    margin-right: 5px
+}
+
+.pressed {
+    background-color: var(--title-dark);
+    color: var(--text-light);
+}
+
+/* --- Responsive Design for Mobile --- */
+/* CHANGED: This breakpoint is now smaller to avoid the "squished" state */
+@media (max-width: 579px) { 
+    /* Stack header items */
+    .top-header {
+        text-align: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Stack main content */
+    .content-wrapper {
+        flex-direction: column; 
+    }
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>artruss</title>
+    <link type="image/png" sizes="96x96" rel="icon" href="/static/img/icons8-wolf-96.png">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/main.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    
+
+</head>
+<body>
+
+    <header class="top-header">
+        <div>
+            <h1>Arturo Miguel Russell Bernal</h1>
+            <h4>PhD Candidate, Computer Science and Engineering, University of Notre Dame</h4>
+        </div>
+        <nav class="main-nav">
+            <a href="/" class="nav-button" id="nav-home">
+                <i class="fa fa-home"></i>
+            </a>
+            <a href="#about" class="nav-button hidden" id="nav-about">
+                <i class="fa fa-user space-right" aria-hidden="true"></i>
+                About
+            </a>
+            <a href="/research/" class="nav-button" id="nav-research">
+                <i class="fa fa-eye-slash space-right" aria-hidden="true"></i>
+                Research
+            </a>
+            <a href="/teaching/cv-spring-2026/" class="nav-button" id="nav-teaching">
+                <i class="fa fa-black-tie space-right" aria-hidden="true"></i>
+                Teaching
+            </a>
+        </nav>
+    </header>
+
+    
+    <main class="content-wrapper">
+        
+        <div class="left-column">
+            
+            <div class="image-container">
+                <img src="/static/img/head.jpeg" alt="A visit to the Forbidden City.">
+            </div>
+
+            <div class="contact-box">
+                <h3>Want to chat over a cup of tea?</h3>
+                <h4>¿Charlamos frente a una taza de té?</h4><hr>
+                <p><strong class="emphasis">
+                    <i class="fa fa-envelope space-right" aria-hidden="true"></i>
+                    Email:</strong> <a href="mailto:arussel@nd.edu">arussel@nd.edu</a>
+                </p>
+                <p><strong class="emphasis">
+                    <i class="fa fa-linkedin-square space-right" aria-hidden="true"></i>
+                    &nbsp;LinkedIn:</strong> <a href="https://www.linkedin.com/in/art-russell" target="_blank">art-russell</a>
+                </p>
+                <p><strong class="emphasis">
+                    <i class="fa fa-graduation-cap space-right" aria-hidden="true"></i>
+                    Scholar:</strong> <a href="https://scholar.google.com/citations?user=7oeE2L4AAAAJ&hl=en&oi=ao" target="_blank">Arturo R.</a>
+                </p>
+                <p><strong class="emphasis">
+                    <i class="fa fa-github space-right" aria-hidden="true"></i>
+                    GitHub:</strong> <a href="https://github.com/ArtRuss/" target="_blank">ArtRuss</a>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="right-column">
+            <a href="#spanish" class="logo-top-right" id="logo-spanish" onclick="toggleVisibility()">
+                <img src="/static/img/Flag_of_Mexico.png" 
+                     alt="Mexican_Flag_Logo">
+            </a>
+            <a href="#english" class="logo-top-right hidden" id="logo-english" onclick="toggleVisibility()">
+                <img src="/static/img/Flag_US.png" 
+                     alt="US_Flag_Logo">
+            </a>
+
+            <div id="text-container-english" class="text-container">
+                <h2>What is the (current) gist about me?</h2>
+                <p> 
+                    Hi, I am in the last turns (&#x1f91e) of a journey towards a PhD at the 
+                    <a href="http://www.nd.edu" target="_blank">University of Notre Dame</a>,
+                    I am co-advised by two amazing professors, 
+                    <a href="https://engineering.nd.edu/faculty/jane-cleland-huang/" target="_blank">Dr. Jane Cleland-Huang</a> 
+                    and <a href="https://www.wjscheirer.com/" target="_blank">Dr. Walter Scheirer</a>.  
+                    My research has focused on the deployment of computer vision onboard sUAS (e.g. drones), 
+                    sharing new datasets to the community (datasets matter a lot), 
+                    improving computer vision models through visual psychophysics (human-inspired models), 
+                    and exploring frameworks to safely and effectively deploy innovative features onboard the limited resources of drones.
+                </p>
+
+                <p>
+                    My contributions have gathered around the theme of semi-autonomous drones 
+                    for search and rescue (SAR) missions. 
+                    We are currently looking into the dynamic behaviour of real-world SAR missions: 
+                    how can we effectively react to changes in the environment? 
+                    how can we effectively leverage new information? 
+                    and how can we effectively face the unknown?
+                </p>
+
+                <img src="/static/img/ND_logo_full.png" 
+                 alt="Notre Dame Logo" 
+                 class="logo-bottom-right-abs">
+                <p>
+                    All in all, I am always looking forward to explore and dig into topics between the intersection of robotics, computer vision and software engineering,
+                    for social, environmental, and meaningful applications.
+                </p>
+
+            </div>
+
+            <div id="text-container-spanish" class="hidden text-container">
+                <h2>¿Qué estamos haciendo hoy?</h2>
+                <p> 
+                    Hola, estamos más cerca de llegar al final (&#x1f91e) de una una travesía llamada Doctorado
+                    en la <a href="http://www.nd.edu" target="_blank">Universidad de Notre Dame, USA</a>,
+                    bajo la dirección de dos profesores increíbles, 
+                    <a href="https://engineering.nd.edu/faculty/jane-cleland-huang/" target="_blank">Dr. Jane Cleland-Huang</a> 
+                    y <a href="https://www.wjscheirer.com/" target="_blank">Dr. Walter Scheirer</a>. 
+                    Mi investigación se ha centrado en la implementación de sistemas de vision por computadora para drones, 
+                    publicando nuevos conjuntos de datos usados para entrenar futuros modelos de vision por computadora, 
+                    mejorando los algoritmos de dichos modelos mediante psicofísica visual (modelos inspirados en el comportamiento humano), 
+                    y explorando marcos para desplegar de manera segura y efectiva funciones innovadoras en los recursos computacionales limitados de los drones. 
+                </p>
+
+                <p>
+                    El enfoque de nuestras contribuciones ha sido hacia el despliegue y uso de drones semi-autónomos 
+                    para misiones de busqueda y rescate.
+                    Actualmente estamos investigando el comportamiento dinámico de dichas misiones: 
+                    ¿cómo pueden los sistemas semi-autónomos adaptarse efectivamente 
+                    ante cambios en su entorno, 
+                    ante la incorporación de nueva información, 
+                    y ante la presencia de 'lo desconocido' en el mundo real?
+                </p>
+
+                <img src="/static/img/ND_logo_full.png" 
+                 alt="Notre Dame Logo" 
+                 class="logo-bottom-right-abs">
+                <p>
+                    Esperamos seguir explorando la intersección 
+                    entre robótica, visión por computadora e ingeniería de software, 
+                    con aplicaciones de impacto a la comunidad y el medio ambiente.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="text-center">
+        <p class="text-muted">
+        <small>
+        Built using
+        <a target="_blank" href="https://icons8.com/icon/urizn5OIBfLR/wolf">Wolf</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>,
+        <a href="https://coolors.co/">Coolors</a>,
+        <a href="https://fontawesome.com/v4/icons/">Font Awesome</a>, and
+        <a href="http://www.python.org/">Python</a>.
+        <br> Last updated: Nov 2025
+        </small>
+        </p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            if (location.hash) {
+                window.location.replace(window.location.pathname);
+            }
+        }
+    </script>
+
+    
+    <script>
+        document.getElementById("nav-home").classList.add("pressed");
+        
+        function toggleVisibility() {
+            document.getElementById("text-container-english").classList.toggle("hidden");
+            document.getElementById("text-container-spanish").classList.toggle("hidden");
+            document.getElementById("logo-english").classList.toggle("hidden");
+            document.getElementById("logo-spanish").classList.toggle("hidden");
+        }
+    </script>
+
+
+</body>
+</html>
