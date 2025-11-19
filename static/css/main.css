@@ -1,23 +1,21 @@
-/* Turquoise Waters */
+/* Nordic theme */
 :root {
+  --header: #0D1B2A;
 
-    --header: #111d13ff;
+  --title-super-dark: #0D1B2A; 
+  --title-dark: #1B263B;
+  --title-light: #415A77;
+  --title-super-light: #E0E5EA;
 
-    --title-super-dark: #111d13ff;
-    --title-dark: #415d43ff; 
-    --title-light: #709775ff; 
-    --title-super-light: #DAF7E1ff; 
-    
-    --emphasis-1: #709775ff;
-    --emphasis-2: #8fb996ff;
-      
-    --background-3: #F6FFF4ff;
-    --background-2: #EFF6EE;
-    --background-1: white;
+  --emphasis-1: #778DA9;
+  --emphasis-2: #A4B5C6;
 
-    --text-dark: black;
-    --text-light: white; 
+  --background-3: #F4F7FA;
+  --background-2: #EEF2F5;
+  --background-1: #FFFFFF;
 
+  --text-dark: #0D1B2A;
+  --text-light: white;
 }
 
 /* --- Basic Body & Font Styling --- */
