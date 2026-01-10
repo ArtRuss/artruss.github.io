@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching</title>
+    <link type="image/png" sizes="96x96" rel="icon" href="/static/img/icons8-wolf-96.png">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/main.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    
+
+
+</head>
+<body>
+
+    <header class="top-header">
+        <div>
+            <h1>Arturo Miguel Russell Bernal</h1>
+            <h4>PhD Candidate, Computer Science and Engineering, University of Notre Dame</h4>
+        </div>
+        <nav class="main-nav">
+            <a href="/" class="nav-button" id="nav-home" target="_self">
+                <i class="fa fa-home"></i>
+            </a>
+            <a href="#about" class="nav-button hidden" id="nav-about" target="_self">
+                <i class="fa fa-user space-right" aria-hidden="true"></i>
+                About
+            </a>
+            <a href="/research/" class="nav-button" id="nav-research" target="_self">
+                <i class="fa fa-eye-slash space-right" aria-hidden="true"></i>
+                Research
+            </a>
+            <a href="/teaching/cv-spring-2026/" class="nav-button" id="nav-teaching" target="_self">
+                <i class="fa fa-black-tie space-right" aria-hidden="true"></i>
+                Teaching
+            </a>
+        </nav>
+    </header>
+
+    
+<img src="/static/img/easter_egg_1.png" alt="Easter Egg 1" class="easter-egg">
+
+
+    <footer class="text-center">
+        <p class="text-muted">
+        <small>
+        Built using
+        <a href="https://icons8.com/icon/urizn5OIBfLR/wolf">Wolf</a> icon by <a href="https://icons8.com">Icons8</a>,
+        <a href="https://coolors.co/">Coolors</a>,
+        <a href="https://fontawesome.com/v4/icons/">Font Awesome</a>, and
+        <a href="http://www.python.org/">Python</a>.
+        <br> Last updated: Nov 2025
+        </small>
+        </p>
+    </footer>
+
+    <script>
+        window.onload = function() {
+            if (location.hash) {
+                window.location.replace(window.location.pathname);
+            }
+        }
+    </script>
+
+    
+    <script>document.getElementById("nav-teaching").classList.add("pressed");</script>
+
+
+</body>
+</html>

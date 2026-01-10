@@ -18,6 +18,7 @@ html {
 }
 body {
   margin: 0;
+  text-align: justify;
 }
 article,
 aside,
@@ -1094,10 +1095,11 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
+  padding: 10px;
   font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 13px;
   line-height: 1.42857143;
-  color: #555555;
+  color: black;
   background-color: #ffffff;
 }
 input,
@@ -1200,6 +1202,7 @@ h6,
   font-weight: bold;
   line-height: 1.1;
   color: #002b5c;
+  text-align: left;
 }
 h1 small,
 h2 small,
@@ -1376,11 +1379,11 @@ a.text-info:hover,
 a.text-info:focus {
   color: #2d6987;
 }
-.text-warning {
-  color: #c09853;
+.text-caution {
+  color: #c4a000;
 }
-a.text-warning:hover,
-a.text-warning:focus {
+a.text-caution:hover,
+a.text-caution:focus {
   color: #a47e3c;
 }
 .text-danger {
@@ -2517,6 +2520,40 @@ table th[class*="col-"] {
     border-bottom: 0;
   }
 }
+
+table.schedule td.unit {
+    background-color: #fff;
+    border-right: 2px solid #ddd;
+    text-align: right;
+    width: 175px;
+    vertical-align: middle;
+}
+
+table.schedule td.text-strong > span:hover {
+  font-style: italic;
+}
+
+table.schedule td i.fa-info-circle {
+    color: #002b5c;
+}
+
+table.schedule td i.fa-caret-right {
+    color: #c4a000;
+}
+
+table.schedule td i.fa-caret-down {
+    color: #c4a000;
+}
+
+table.schedule h4 i {
+    display: inline;
+    padding: 10px;
+}
+
+table.schedule tr.striped {
+    background-color: #f9f9f9;
+}
+
 fieldset {
   padding: 0;
   margin: 0;
@@ -6952,4 +6989,73 @@ button.close {
 .panel-danger .panel-title,
 .panel-info .panel-title {
   color: #fff;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.resources-hidden {
+    display: none;
+}
+
+.resources-display {
+    display: table-row;
+}
+
+.hover-assignment:hover {
+    transition-duration: 0s;
+}
+
+.hover-assignment {
+  position: relative; /* Required for absolute positioning of the tooltip */
+}
+
+.hover-assignment:hover::after {
+  content: attr(data-title); /* Pull the text from the data-title attribute */
+  /* Add your styling here for the tooltip box */
+  position: absolute;
+  background: black;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  top: 0%; /* Position it below the element */
+  left: 0;
+  white-space: nowrap;
+  /* Ensure it's visible */
+  display: block;
+  z-index: 10;
+}
+
+/* Initially hide the tooltip content */
+.hover-assignment::after {
+    display: none;
+}
+
+.hover-primary:hover::after {
+  background: #002b5c;
+}
+
+.hover-caution:hover::after {
+  background: #c4a000;
+}
+
+.hover-success:hover::after {
+  background: #73a839;
+}
+
+.hover-info:hover::after {
+  background: #2fa4e7;
+}
+
+.hover-danger:hover::after {
+  background: #c71c22;
+}
+
+
+.special-talks[href]:hover,
+.special-talks[href]:focus {
+  background-color: #2fa4e7;
+  font-style: italic;
 }

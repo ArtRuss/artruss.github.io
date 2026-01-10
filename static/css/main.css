@@ -240,6 +240,15 @@ footer {
     color: var(--text-light);
 }
 
+.easter-egg {
+    padding-top: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;  /* makes it a circle */
+    margin: 0 auto;      /* centers horizontally */
+    display: block; 
+}
+
 /* --- Responsive Design for Mobile --- */
 /* CHANGED: This breakpoint is now smaller to avoid the "squished" state */
 @media (max-width: 579px) { 
