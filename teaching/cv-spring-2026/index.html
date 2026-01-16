@@ -383,15 +383,15 @@
                 </tr>
                 
                 <tr>
-                    <td rowspan="1" class="text-strong text-primary text-center unit" id="unit-cell-Field_CV">
+                    <td rowspan="2" class="text-strong text-primary text-center unit" id="unit-cell-Field_CV">
                         Field of Computer Vision
                     </td>
 
                     <td class="text-center text-strong">01/14</td>
                     <td class="text-strong">
-                        <span onclick="toggleResourcesLectures('lec-intro-1','Field_CV')" style="cursor: pointer;">
+                        <span onclick="toggleResourcesLectures('lec-intro','Field_CV')" style="cursor: pointer;">
                             Introduction to Computer Vision
-                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-intro-1"></i>
+                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-intro"></i>
                         </span>
                     </td>
                     <td class="text-center">
@@ -400,7 +400,7 @@
                         </a>
                     </td>
                 </tr>
-                <tr id="resources-lec-intro-1" style="display: none;">
+                <tr id="resources-lec-intro" style="display: none;" class="text-left">
                     <td colspan="3">
                         <div class="row">
                             <div class="col-md-4">
@@ -409,15 +409,21 @@
                                     <li><a href="https://drive.google.com/file/d/1fw4g4Lbgrwo-JAY6Dzxj4Y7sFD76IJjd/view?usp=sharing">
                                         Slides
                                     </a></li>
+                                    <li><a href="https://szeliski.org/Book/">
+                                        Chapter 1: Introduction <br>(Richard Szeliski)
+                                    </a></li>
+                                    <li><a href="https://www.cl.cam.ac.uk/~jgd1000/">
+                                        Chapter 1: Overview, pp. 11-20 <br> (John Daugman)
+                                    </a></li>
                                     <li><a href="https://www.geeksforgeeks.org/software-engineering/edge-detection-using-prewitt-scharr-and-sobel-operator/">
                                         Edge Detection Techniques
                                     </a></li>
                                     <li><a href="https://visionbook.mit.edu/simplesystem.html">
-                                        Chapter 2: A Simple Vision System <br>(from course textbook)
+                                        Chapter 2: A Simple Vision System <br>(Torralba et al.)
                                     </a></li>
                                 </ul>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <h4><i class="fa fa-video-camera" aria-hidden="true"></i>Videos</h4>
                                 <ul>
                                     <li><a href="https://www.youtube.com/watch?v=bZ0ZKido0Ag">
@@ -425,7 +431,15 @@
                                     </a></li>
                                 </ul>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
+                                <h4><i class="fa-brands fa-python" aria-hidden="true"></i>Code</h4>
+                                <ul>
+                                    <li><a href="https://drive.google.com/file/d/1KyJ6nbeXtrsbS4yo3AaKV5To5hMEj2a6/view?usp=sharing">
+                                        Pixel Intensity Plot
+                                    </a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-3">
                                 <h4><i class="fa-solid fa-screwdriver-wrench"></i>Tools</h4>
                                 <ul>
                                     <li><a href="https://fiveko.com/online-tools/edge-detection-gradient-operators-demo/">
@@ -439,45 +453,60 @@
                         </div>
                     </td>
                 </tr>
-                
-                <tr>
-                    <td rowspan="3" class="text-strong text-primary text-center unit" id="unit-cell-Biological_Vision">
-                        Biological Vision
-                    </td>
 
+                <tr>
                     <td class="text-center text-strong">
                         <span data-title="Homework 00" class="label label-caution hover-assignment hover-caution"> 
                             <i class="fa-regular fa-file-word"></i> 01/16
                         </span>
                     </td>
                     <td class="text-strong">
-                        <span onclick="toggleResourcesLectures('lec-bio-1','Biological_Vision')" style="cursor: pointer;">
-                            Biological Inspirations in CV (Part 1)
-                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-bio-1"></i>
+                        <span onclick="toggleResourcesLectures('lec-sar','Field_CV')" style="cursor: pointer;">
+                            Applications: CV for Emergency Response Scenarios
+                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-sar"></i>
                         </span>
                     </td>
                     <td class="text-center"></td>
                 </tr>
-                <tr id="resources-lec-bio-1" style="display: none;">
+                <tr id="resources-lec-sar" style="display: none;">
                     <td colspan="3">
                         <div class="row">
                             <div class="col-md-4">
                                 <h4><i class="fa fa-book" aria-hidden="true"></i>Readings</h4>
                                 <ul>
-                                    <li><a href="">Slides</a></li>
+                                    <li><a href="https://drive.google.com/file/d/1OP-djMhUdGXY6VycnwiImAAgbSYinCqf/view?usp=drive_link">
+                                        Slides
+                                    </a></li>
+                                    <li><a href="https://drive.google.com/file/d/1OBFQPOtW-BPafMjKKMR-rgyaIDb6DFSl/view?usp=sharing">
+                                        Smart Mission Planer <br> (by Tony Alarcon)
+                                    </a></li>
                                 </ul>
                             </div>
                             <div class="col-md-4">
                                 <h4><i class="fa fa-video-camera" aria-hidden="true"></i>Videos</h4>
+                                <ul>
+                                    <li><a href="https://drive.google.com/file/d/19pgBGSZ9jQ5sRpU07xZpVVfSBk7pRBG3/view?usp=sharing">
+                                        Smart Mission Planer <br> (by Tony Alarcon)
+                                    </a></li>
+                                </ul>
                             </div>
                             <div class="col-md-4">
-                                <h4><i class="fa-brands fa-python" aria-hidden="true"></i>Code</h4>
+                                <h4><i class="fa-solid fa-database"></i>Datasets</h4>
+                                <ul>
+                                    <li><a href="https://github.com/ArtRuss/nomad">
+                                        NOMAD & Psych-ER
+                                    </a></li>
+                                </ul>
                             </div>
                         </div>
                     </td>
                 </tr>
-
+                
                 <tr>
+                    <td rowspan="2" class="text-strong text-primary text-center unit" id="unit-cell-Biological_Vision">
+                        Biological Vision
+                    </td>
+
                     <td class="text-center text-muted"> 01/19 </td>
                     <td class="text-muted">
                         Martin Luther King Jr. Day (No Class)
@@ -492,16 +521,16 @@
                         </span>
                     </td>
                     <td class="text-strong">
-                        <span onclick="toggleResourcesLectures('lec-bio-2','Biological_Vision')" style="cursor: pointer;">
-                            Biological Inspirations in CV (Part 2)
-                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-bio-2"></i>
+                        <span onclick="toggleResourcesLectures('lec-bio','Biological_Vision')" style="cursor: pointer;">
+                            Biological Inspirations in CV
+                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-bio"></i>
                         </span>
                     </td>
                     <td class="text-center">
                         <a class="label label-caution" href=""> <i class="fa-regular fa-file-word"></i> Homework 02 </a>
                     </td>
                 </tr>
-                <tr id="resources-lec-bio-2" style="display: none;">
+                <tr id="resources-lec-bio" style="display: none;">
                     <td colspan="3">
                         <div class="row">
                             <div class="col-md-4">
@@ -1463,7 +1492,7 @@
                 </tr>
 
                 <tr>
-                    <td rowspan="4" class="text-strong text-primary text-center unit" id="unit-cell-Multiple_View">
+                    <td rowspan="5" class="text-strong text-primary text-center unit" id="unit-cell-Multiple_View">
                         Multiple-View
                     </td>
 
@@ -1599,49 +1628,10 @@
                 </tr>
 
                 <tr>
-                    <td colspan="4" class="text-center text-strong text-caution" style="border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; padding: 4px;">
-                        Applications of Computer Vision
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td rowspan="2" class="text-strong text-primary text-center unit" id="unit-cell-Applications">
-                        Applications
-                    </td>
-
                     <td class="text-center text-strong">04/24</td>
                     <td class="text-strong">
-                        <span onclick="toggleResourcesLectures('lec-sar','Applications')" style="cursor: pointer;">
-                            Computer Vision for Emergency Response Scenarios
-                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-sar"></i>
-                        </span>
-                    </td>
-                    <td class="text-center"></td>
-                </tr>
-                <tr id="resources-lec-sar" style="display: none;">
-                    <td colspan="3">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h4><i class="fa fa-book" aria-hidden="true"></i>Readings</h4>
-                                <ul>
-                                    <li><a href="">Slides</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4">
-                                <h4><i class="fa fa-video-camera" aria-hidden="true"></i>Videos</h4>
-                            </div>
-                            <div class="col-md-4">
-                                <h4><i class="fa-brands fa-python" aria-hidden="true"></i>Code</h4>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td class="text-center text-strong">04/27</td>
-                    <td class="text-strong">
-                        <span onclick="toggleResourcesLectures('lec-ecology','Applications')" style="cursor: pointer;">
-                            Computer Vision for Ecology
+                        <span onclick="toggleResourcesLectures('lec-ecology','Multiple_View')" style="cursor: pointer;">
+                            Applications: Computer Vision for Ecology
                             <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-ecology"></i>
                         </span>
                     </td>
@@ -1665,7 +1655,7 @@
                         </div>
                     </td>
                 </tr>
-            
+                
                 <tr>
                     <td colspan="4" class="text-center text-strong text-caution" style="border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; padding: 4px;">
                         Review & Evaluation
@@ -1673,15 +1663,11 @@
                 </tr>
             
                 <tr>
-                    <td rowspan="1" class="text-strong text-primary text-center unit" id="unit-cell-Review">
+                    <td rowspan="2" class="text-strong text-primary text-center unit" id="unit-cell-Review">
                         Review
                     </td>
 
-                    <td class="text-center text-strong">
-                        <span data-title="Homework 10" class="label label-caution hover-assignment hover-caution"> 
-                            <i class="fa-regular fa-file-word"></i> 04/29
-                        </span>
-                    </td>
+                    <td class="text-center text-strong">04/27</td>
                     <td class="text-strong">
                         <span onclick="toggleResourcesLectures('lec-review','Review')" style="cursor: pointer;">
                             Review for Final Exam
@@ -1707,6 +1693,18 @@
                             </div>
                         </div>
                     </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center text-strong">
+                        <span data-title="Homework 10" class="label label-caution hover-assignment hover-caution"> 
+                            <i class="fa-regular fa-file-word"></i> 04/29
+                        </span>
+                    </td>
+                    <td class="text-strong">
+                        Final Exam (optional)
+                    </td>
+                    <td class="text-center"></td>
                 </tr>
 
                 <tr>
