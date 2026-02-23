@@ -66,10 +66,13 @@ footer {
     margin: 0px;
     padding: 0px;
     font-size: 1.8em;
+    font-family: serif;
 }
 
 .top-header h4 {
     color: var(--background-2);
+    font-size: 1.1em;
+    font-family: serif;
 }
 
 
@@ -106,7 +109,7 @@ footer {
     max-width: 1000px;
     margin: 20px auto;
     background-color: var(--background-2);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px var(--emphasis-1);
     position: relative;
 }
 

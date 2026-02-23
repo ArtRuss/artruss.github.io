@@ -28,7 +28,7 @@
     margin: 20px auto;
     padding: 30px;
     background-color: var(--background-2); /* Use consistent background */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px var(--emphasis-1);
 }
 
 /* --- Individual Research Item --- */
