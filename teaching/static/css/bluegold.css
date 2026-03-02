@@ -7054,8 +7054,8 @@ button.close {
 }
 
 
-.special-talks[href]:hover,
-.special-talks[href]:focus {
+.special-talks:hover,
+.special-talks:focus {
   background-color: #2fa4e7;
   font-style: italic;
 }

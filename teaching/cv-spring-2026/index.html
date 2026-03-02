@@ -853,7 +853,7 @@
                             <i class="fa-brands fa-python"></i> 02/02 
                         </span>
                     </td>
-                    <td>
+                    <td class="text-strong">
                         <span onclick="toggleResourcesLectures('lec-practical-01','Image_Processing')" style="cursor: pointer;">
                             <a class="label label-primary"> <i class="fa-brands fa-python"></i> Practical 01 (In-Class) </a>
                             &nbsp;
@@ -1450,7 +1450,7 @@
                             <i class="fa-brands fa-python"></i> 02/23
                         </span>
                     </td>
-                    <td>
+                    <td class="text-strong">
                         <span onclick="toggleResourcesLectures('lec-practical-02','Feature_Extraction')" style="cursor: pointer;">
                             <a class="label label-primary"> <i class="fa-brands fa-python"></i> Practical 02 (In-Class) </a>
                             &nbsp;
@@ -1523,6 +1523,9 @@
                                     <li><a href="https://medium.com/@deepanshut041/introduction-to-sift-scale-invariant-feature-transform-65d7f3a72d40">
                                         Introduction to SIFT, <br> (Deep)
                                     </a></li>
+                                    <li><a href="https://szeliski.org/Book/">
+                                        Chapter 7.1: Points and Patches, <br> (Richard Szeliski)
+                                    </a></li>
                                 </ul>
                             </div>
                             <div class="col-md-4">
@@ -1578,6 +1581,9 @@
                                         Performance Evaluation of Texture Measures <br> with Classification based on Kullback Discrimination of Distributions,
                                         <br> (Ojala et al.)
                                     </a></li>
+                                    <li><a href="https://szeliski.org/Book/">
+                                        Chapter 7.1: Points and Patches, <br> (Richard Szeliski)
+                                    </a></li>
                                 </ul>
                             </div>
                             <div class="col-md-3">
@@ -1607,20 +1613,57 @@
                         </span>
                     </td>
                     <td class="text-center">
-                        <a class="label label-caution" href=""> <i class="fa-regular fa-file-word"></i> Homework 06 </a>
+                        <a class="label label-caution" href="https://drive.google.com/file/d/1pTCp_Cx9nFqQLcxJxfpUPN-sxJN7kIfW/view?usp=sharing"> 
+                            <i class="fa-regular fa-file-word"></i> Homework 06 
+                        </a>
+
                     </td>
                 </tr>
                 <tr id="resources-lec-geometric-transformations" style="display: none;">
                     <td colspan="3">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4 text-left">
                                 <h4><i class="fa fa-book" aria-hidden="true"></i>Readings</h4>
                                 <ul>
-                                    <li><a href="">Slides</a></li>
+                                    <li><a href="https://drive.google.com/file/d/1WdipWrrqZWsuInKJwUXNKubBP9PgZoBp/view?usp=sharing">
+                                        Slides
+                                    </a></li>
+                                    <li><a href="https://szeliski.org/Book/">
+                                        Chapter 2.1.1: 2D Transformations, <br> (Richard Szeliski)
+                                    </a></li>
+                                    <li><a href="https://visionbook.mit.edu/homography.html">
+                                        Chapter 41: Homographies, <br> (Torralba et al.)
+                                    </a></li>
+                                    <li><a href="https://www.robots.ox.ac.uk/~vgg/hzbook/">
+                                        Chapter 2: Projective Geometry <br> and Transformations of 2D, <br> (Richard Hartley and Andrew Zisserman)
+                                    </a></li>
+                                    <li><a href="https://www.robots.ox.ac.uk/~vgg/hzbook/">
+                                        Chapter 4:  Estimation – <br> 2D Projective Transformations, <br> (Richard Hartley and Andrew Zisserman)
+                                    </a></li>
+                                    <li><a href="https://www.cs.cmu.edu/~16385/lectures/lecture7.pdf">
+                                        Lecture 7:  2D Transformations, <br> (Ioannis Gkioulekas)
+                                    </a></li>
                                 </ul>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-4 text-left">
                                 <h4><i class="fa fa-video-camera" aria-hidden="true"></i>Videos</h4>
+                                <ul>
+                                    <li><a href="https://www.youtube.com/watch?v=K2XLXlyPqCA&list=PL2zRqk16wsdp8KbDfHKvPYNGF2L-zQASc&index=2">
+                                        2x2 Image Transformations, <br> (Shree Nayar - <br> First Principles of Computer Vision)
+                                    </a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=B8kMB6Hv2eI&list=PL2zRqk16wsdp8KbDfHKvPYNGF2L-zQASc&index=3">
+                                        3x3 Image Transformations, <br> (Shree Nayar - <br> First Principles of Computer Vision)
+                                    </a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=l_qjO4cM74o&list=PL2zRqk16wsdp8KbDfHKvPYNGF2L-zQASc&index=4">
+                                       Computing Homography, <br> (Shree Nayar - <br> First Principles of Computer Vision)
+                                    </a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=EkYXjmiolBg&list=PL2zRqk16wsdp8KbDfHKvPYNGF2L-zQASc&index=5">
+                                        Dealing with Outliers: RANSAC <br> (Shree Nayar - <br> First Principles of Computer Vision)
+                                    </a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=D9rAOAL12SY&list=PL2zRqk16wsdp8KbDfHKvPYNGF2L-zQASc&index=6">
+                                        Warping and Blending Images, <br> (Shree Nayar - <br> First Principles of Computer Vision)
+                                    </a></li>
+                                </ul>
                             </div>
                             <div class="col-md-4">
                                 <h4><i class="fa-brands fa-python" aria-hidden="true"></i>Code</h4>
@@ -1632,11 +1675,50 @@
                 <tr>
                     <td class="text-center text-strong">03/04</td>
                     <td>
-                        <a class="label label-info special-talks" href=""> <i class="fa-solid fa-microphone-lines"></i> 
-                            Special Talk: A History of Fake Things on the Internet 
-                        </a>
+                        <span onclick="toggleResourcesLectures('lec-special-talk','Geometric_Transformations')" style="cursor: pointer;">
+                            <a class="label label-info special-talks"> <i class="fa-solid fa-microphone-lines"></i> 
+                                Special Talk: A History of Fake Things on the Internet, by Walter Scheirer
+                            </a>
+                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-special-talk"></i>
+                        </span>
                     </td>
                     <td class="text-center"></td>
+                </tr>
+                <tr id="resources-lec-special-talk" style="display: none;">
+                    <td colspan="3">
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                <img src="/teaching/static/img/history_of_fake_things.webp" width="240" height="320"><br><br>
+                            </div>
+                            <div class="col-md-8 text-left">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <b>A History of Fake Things on the Internet</b><br>
+                                        <i>Walter J. Scheirer</i><br><br>
+                                        <p style="padding: 0 5% 0 5%;" class="text-justify">
+                                            "As all aspects of our social and informational lives increasingly migrate online, the line between what is 'real' and what is digitally fabricated grows ever thinner—and that fake content has undeniable real-world consequences. 
+                                            A History of Fake Things on the Internet takes the long view of how advances in technology brought us to the point where faked texts, images, and video content are nearly indistinguishable from what is authentic or true."
+                                            (<a href="https://www.sup.org/books/history/history-fake-things-internet">Stanford University Press</a>)
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-9 text-justify">
+                                        <a href="https://www.wjscheirer.com/"><i>Walter J. Scheirer</i></a> is a professor from the Department of Computer Science and Engineering at the University of Notre Dame.
+                                        Withing the computer vision field, he is pioneer of <a href="https://www.wjscheirer.com/papers/wjs_tpami2013_openset.pdf">open set recognition</a>, with recent contributions to <a href="https://www.wjscheirer.com/projects/openset-recognition/">open world settings</a>.  
+                                        He is one of the first to utilize <a href="https://www.wjscheirer.com/projects/psychophysics-cv/">visual psychophysics for computer vision</a>, improving algorithms based on measured human perception.  
+                                        His contributions expand to the use of extreme value theory models for visual recognition, digital image and video forensics, hyperparameter optimization, and much more.  
+                                        He is also a cultural critic and historian, commenting on the social context of emerging technologies from the realistic perspective of a computer scientist.
+
+
+                                    </div>
+                                    <div class="col-md-3 text-center">
+                                        <img src="/teaching/static/img/wjscheirer2.jpg" width="120" height="160"><br><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
                 
                 <tr>
