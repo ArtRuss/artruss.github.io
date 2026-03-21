@@ -27,8 +27,18 @@
 <body>
 <div class="container">
 
+
+
 <!-- HEADER: START -->
 <div class="row">
+    <!-- ALERTS: START -->
+    <div class="alert alert-info alert-dismissible" role="alert" id="deadline-alerts" style="display: none;">
+        <button type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <span id="alert-msg"></span>
+    </div>
+    <!-- ALERTS: END -->
     <div class="page-header">
         <ul class="nav nav-pills pull-right">
 
@@ -247,8 +257,8 @@
                         <span class="label ">[13]</span>
                         <span class="label label-default">[16]</span>
                         <span class="label label-caution">[18]</span>
-                        <span class="label label-primary">[20]</span>
-                        <span class="label label-default">[23]</span>
+                        <span class="label label-default">[20]</span>
+                        <span class="label label-primary">[23]</span>
                         <span class="label label-default">[25]</span>
                         <span class="label label-success">[27]</span>
                     </div>
@@ -306,7 +316,7 @@
         next to a topic for additional resources.
     </p>
     <div class="row">
-        <table class="table condensed schedule">
+        <table class="table condensed schedule" id="course-schedule">
             <thead>
                 <tr>
                     <th class="text-center text-caution">Unit</th>
@@ -849,7 +859,7 @@
 
                 <tr>
                     <td class="text-center text-strong">
-                        <span data-title="Practical 01" class="label label-primary hover-assignment hover-primary"> 
+                        <span data-title="Practical 01 (Before-Class)" class="label label-primary hover-assignment hover-primary hover-pbc"> 
                             <i class="fa-brands fa-python"></i> 02/02 
                         </span>
                     </td>
@@ -1446,7 +1456,7 @@
 
                 <tr>
                     <td class="text-center">
-                        <span data-title="Practical 02" class="label label-primary hover-assignment hover-primary"> 
+                        <span data-title="Practical 02 (Before-Class)" class="label label-primary hover-assignment hover-primary hover-pbc"> 
                             <i class="fa-brands fa-python"></i> 02/23
                         </span>
                     </td>
@@ -1723,7 +1733,7 @@
                 
                 <tr>
                     <td class="text-center text-strong">
-                        <span data-title="Practical 03" class="label label-primary hover-assignment hover-primary"> 
+                        <span data-title="Practical 03 (Before-Class)" class="label label-primary hover-assignment hover-primary hover-pbc"> 
                             <i class="fa-brands fa-python"></i> 03/06
                         </span>
                     </td>
@@ -1897,11 +1907,7 @@
                 </tr>
             
                 <tr>
-                    <td class="text-center text-strong">
-                        <span data-title="Practical 03" class="label label-primary hover-assignment hover-primary"> 
-                            <i class="fa-brands fa-python"></i> 03/20
-                        </span>
-                    </td>
+                    <td class="text-center text-strong"> 03/20 </td>
                     <td class="text-strong">
                         <span onclick="toggleResourcesLectures('lec-feature-classification-3','Feature_Classification')" style="cursor: pointer;">
                             Feature Classification (Part 3)
@@ -1909,7 +1915,9 @@
                         </span>
                     </td>
                     <td class="text-center">
-                        <a class="label label-caution" href=""> <i class="fa-regular fa-file-word"></i> Homework 07 </a>
+                        <a class="label label-caution" href="https://drive.google.com/file/d/1Zi0LQGvNOcsKdUwWpKAe0KqFcVrpJUMF/view?usp=sharing"> 
+                            <i class="fa-regular fa-file-word"></i> Homework 07 
+                        </a>
                     </td>
                 </tr>
                 <tr id="resources-lec-feature-classification-3" style="display: none;">
@@ -1918,11 +1926,29 @@
                             <div class="col-md-4">
                                 <h4><i class="fa fa-book" aria-hidden="true"></i>Readings</h4>
                                 <ul>
-                                    <li><a href="">Slides</a></li>
+                                    <li><a href="https://drive.google.com/file/d/1BE7cfcjz6rGDmwesrq1PR3zmBLPgMY_Y/view?usp=sharing">
+                                        Slides
+                                    </a></li>
+                                    <li><a href="https://probml.github.io/pml-book/book1.html">
+                                        17.3 Support Vector Machines (SVMs), <br> (Kevin Patrick Murphy)
+                                    </a></li>
+                                    <li><a href="https://szeliski.org/Book/">
+                                        5.1.4 Support Vector Machines, <br> (Richard Szeliski)
+                                    </a></li>
                                 </ul>
                             </div>
                             <div class="col-md-4">
                                 <h4><i class="fa fa-video-camera" aria-hidden="true"></i>Videos</h4>
+                                <ul>
+                                    <li><a href="https://www.youtube.com/watch?v=8mjcnxGMwFo&list=PLHXZ9OQGMqxc_CvEy7xBKRQr6I214QJcd&index=24">
+                                        Lagrange Multipliers <br> | Geometric Meaning & Full Example, <br>
+                                        (Dr. Trefor Bazett)
+                                    </a></li>
+                                    <li><a href="https://www.youtube.com/watch?v=efR1C6CvhmE">
+                                        Support Vector Machines <br> Part 1 (of 3): Main Ideas!!!, <br>
+                                        (StatQuest with Josh Starmer)
+                                    </a></li>
+                                </ul>
                             </div>
                             <div class="col-md-4">
                                 <h4><i class="fa-brands fa-python" aria-hidden="true"></i>Code</h4>
@@ -1936,7 +1962,11 @@
                         Deep Learning
                     </td>
 
-                    <td class="text-center text-strong">03/23</td>
+                    <td class="text-center text-strong">
+                        <span data-title="Practical 03" class="label label-primary hover-assignment hover-primary"> 
+                            <i class="fa-brands fa-python"></i> 03/23
+                        </span>
+                    </td>
                     <td class="text-strong">
                         <span onclick="toggleResourcesLectures('lec-deep-learning-1','Deep_Learning')" style="cursor: pointer;">
                             Deep Learning in Computer Vision (Part 1)
@@ -2034,7 +2064,7 @@
 
                 <tr>
                     <td class="text-center text-strong">
-                        <span data-title="Practical 04" class="label label-primary hover-assignment hover-primary"> 
+                        <span data-title="Practical 04 (Before-Class)" class="label label-primary hover-assignment hover-primary hover-pbc"> 
                             <i class="fa-brands fa-python"></i> 03/30
                         </span>
                     </td>
@@ -2166,7 +2196,7 @@
 
                 <tr>
                     <td class="text-center text-strong">
-                        <span data-title="Practical 05" class="label label-primary hover-assignment hover-primary"> 
+                        <span data-title="Practical 05 (Before-Class)" class="label label-primary hover-assignment hover-primary hover-pbc"> 
                             <i class="fa-brands fa-python"></i> 04/13
                         </span>
                     </td>
@@ -2771,6 +2801,7 @@
 <li><a href="https://homepages.inf.ed.ac.uk/rbf/CVonline/">CVonline</a></li>
 <li><a href="https://www.robots.ox.ac.uk/~vgg/hzbook/"><i>Multiple View Geometry in Computer Vision</i>, 2nd Ed.</a></li>
 <li><a href="https://www.bishopbook.com/"><i>Deep Learning: Foundations and Concepts</i></a></li>
+<li><a href="https://probml.github.io/pml-book/book1.html"><i>Probabilistic Machine Learning: An Introduction</i></a></li>
 </ul>
 <h3>Git Tutorials</h3>
 <ul>
@@ -2872,32 +2903,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/3acc3fb8d2.js" crossorigin="anonymous"></script>
-    <script>
-        toggleResourcesLectures('lec-special-talk','Geometric_Transformations')
-        function toggleResourcesLectures(id, unit) {
-            console.log(id)
-            console.log(unit)
-            const caret = document.getElementById(`caret-${id}`);
-            const resourcesRow = document.getElementById(`resources-${id}`);
-            const unitCell = document.getElementById(`unit-cell-${unit}`);
-            console.log(unitCell)
-
-            if (resourcesRow.style.display === 'table-row') {
-                caret.classList.remove('fa-caret-down');
-                caret.classList.add('fa-caret-right');
-
-                if (unitCell) { unitCell.rowSpan = unitCell.rowSpan - 1; }
-                resourcesRow.style.display = 'none';
-            } else {
-                caret.classList.remove('fa-caret-right');
-                caret.classList.add('fa-caret-down');
-
-                if (unitCell) { unitCell.rowSpan = unitCell.rowSpan + 1; }
-                resourcesRow.style.display = 'table-row';
-            }
-        }
-    </script>
-	
+    <script src="/teaching/static/js/alerts.js"></script>
+    <script src="/teaching/static/js/lectures.js"></script>
 	
     </body>
 </html>

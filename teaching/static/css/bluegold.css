@@ -7004,10 +7004,6 @@ button.close {
     display: table-row;
 }
 
-.hover-assignment:hover {
-    transition-duration: 0s;
-}
-
 .hover-assignment {
   position: relative; /* Required for absolute positioning of the tooltip */
 }
@@ -7031,6 +7027,11 @@ button.close {
 /* Initially hide the tooltip content */
 .hover-assignment::after {
     display: none;
+}
+
+/* Targets practical before class */
+.hover-pbc:hover::after {
+    left: -60%; 
 }
 
 .hover-primary:hover::after {
@@ -7058,4 +7059,12 @@ button.close {
 .special-talks:focus {
   background-color: #2fa4e7;
   font-style: italic;
+}
+
+#deadline-alerts {
+  margin: 0;
+}
+
+.deadline-danger {
+  color: #c71c22;
 }
