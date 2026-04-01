@@ -277,14 +277,14 @@
                         <span class="label label-success">[17]</span>
                         <span class="label label-primary">[20]</span>
                         <span class="label label-caution">[22]</span>
-                        <span class="label label-default">[24]</span>
+                        <span class="label label-caution">[24]</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3 text-strong text-primary">May (W16-)</div>
                     <div class="col-md-9">
                         <span class="label label-default">[27]</span>
-                        <span class="label label-caution">[29]</span>
+                        <span class="label label-default">[29]</span>
                         <span class="label label-success">[01]</span>
                         <span class="label ">[04]</span>
                         <span class="label label-danger">[05]</span>
@@ -1958,7 +1958,7 @@
                 </tr>
 
                 <tr>
-                    <td rowspan="10" class="text-strong text-primary text-center unit" id="unit-cell-Deep_Learning">
+                    <td rowspan="11" class="text-strong text-primary text-center unit" id="unit-cell-Deep_Learning">
                         Deep Learning
                     </td>
 
@@ -2243,26 +2243,62 @@
                         </span>
                     </td>
                     <td class="text-strong">
-                        <span onclick="toggleResourcesLectures('lec-generative-models','Deep_Learning')" style="cursor: pointer;">
-                            Generative Models
-                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-generative-models"></i>
+                        <span onclick="toggleResourcesLectures('lec-deep-learning-4','Deep_Learning')" style="cursor: pointer;">
+                            Deep Learning in Computer Vision (Part 4)
+                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-deep-learning-4"></i>
                         </span>
                     </td>
                     <td class="text-center">
-                        <a class="label label-primary" href=""> <i class="fa-brands fa-python"></i> Practical 05 (Before-Class) </a>
+                        <a class="label label-primary" href="https://drive.google.com/file/d/1u7cHSeKjJ16l7FYwuvlbPHDPQ-6bkq3n/view?usp=sharing"> 
+                            <i class="fa-brands fa-python"></i> Practical 05 (Before-Class) 
+                        </a>
                     </td>
                 </tr>
-                <tr id="resources-lec-generative-models" style="display: none;">
+                <tr id="resources-lec-deep-learning-4" style="display: none;">
                     <td colspan="3">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4 text-left">
                                 <h4><i class="fa fa-book" aria-hidden="true"></i>Readings</h4>
                                 <ul>
-                                    <li><a href="">Slides</a></li>
+                                    <li><a href="https://drive.google.com/file/d/1olzRfIvfjrLtF9s3MKkJqImBhX0l6GMH/view?usp=sharing">
+                                        Slides
+                                    </a></li>
+                                    <li><a href="https://openaccess.thecvf.com/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf">
+                                        FCN Paper, <br>(Jonathan Long, Evan Shelhamer, <br> Trevor Darrell)
+                                    </a></li>
+                                    <li><a href="https://link.springer.com/chapter/10.1007/978-3-319-24574-4_28">
+                                        U-Net Paper, <br>(Olaf Ronneberger et al.)
+                                    </a></li>
+                                    <li><a href="https://openaccess.thecvf.com/content/ICCV2023/papers/Kirillov_Segment_Anything_ICCV_2023_paper.pdf">
+                                        Segment Anything Paper, <br>(Alexander Kirillov et al.)
+                                    </a></li>
+                                    <li><a href="https://proceedings.neurips.cc/paper_files/paper/2015/file/14bfa6bb14875e45bba028a21ed38046-Paper.pdf">
+                                        Faster-RCNN Paper, <br>(Shaoqing Ren et al.)
+                                    </a></li>
+                                    <li><a href="https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Redmon_You_Only_Look_CVPR_2016_paper.pdf">
+                                        YOLO Paper, <br>(Joseph Redmond et al.)
+                                    </a></li>
+                                    <li><a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Redmon_YOLO9000_Better_Faster_CVPR_2017_paper.pdf">
+                                        YOLOv2 Paper, <br>(Joseph Redmod & Ali Farhadi)
+                                    </a></li>
+                                    <li><a href="https://arxiv.org/pdf/1804.02767">
+                                        YOLOv3 Paper, <br>(Joseph Redmod & Ali Farhadi)
+                                    </a></li>
+                                    <li><a href="https://openaccess.thecvf.com/content_ICCV_2017/papers/Lin_Focal_Loss_for_ICCV_2017_paper.pdf">
+                                        RetinaNet (Focal Loss) Paper, <br>(Tsung-Yi Lin et al.)
+                                    </a></li>
+                                    <li><a href="https://openaccess.thecvf.com/content/WACV2025/papers/Bernal_Psych-Occlusion_using_Visual_Psychophysics_for_Aerial_Detection_of_Occluded_Persons_WACV_2025_paper.pdf">
+                                        Human-Guided Loss <br> for Aerial Person Detection, <br>(Arturo Russell et al.)
+                                    </a></li>
                                 </ul>
                             </div>
                             <div class="col-md-4">
                                 <h4><i class="fa fa-video-camera" aria-hidden="true"></i>Videos</h4>
+                                <ul>
+                                    <li><a href="https://www.youtube.com/watch?v=ag3DLKsl2vk">
+                                        What is YOLO algorithm?, <br> (codebasics - Dhaval Patel)
+                                    </a></li>
+                                </ul>
                             </div>
                             <div class="col-md-4">
                                 <h4><i class="fa-brands fa-python" aria-hidden="true"></i>Code</h4>
@@ -2294,14 +2330,14 @@
                         </span>
                     </td>
                     <td class="text-strong">
-                        <span onclick="toggleResourcesLectures('lec-vlms','Deep_Learning')" style="cursor: pointer;">
-                            Vision-Language Models
-                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-vlms"></i>
+                        <span onclick="toggleResourcesLectures('lec-generative-models','Deep_Learning')" style="cursor: pointer;">
+                            Generative Models
+                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-generative-models"></i>
                         </span>
                     </td>
                     <td class="text-center"></td>
                 </tr>
-                <tr id="resources-lec-vlms" style="display: none;">
+                <tr id="resources-lec-generative-models" style="display: none;">
                     <td colspan="3">
                         <div class="row">
                             <div class="col-md-4">
@@ -2327,16 +2363,14 @@
                         </span>
                     </td>
                     <td class="text-strong">
-                        <span onclick="toggleResourcesLectures('lec-reliability','Deep_Learning')" style="cursor: pointer;">
-                            Reliability of Deep Learning-Based Models
-                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-reliability"></i>
+                        <span onclick="toggleResourcesLectures('lec-vlms','Deep_Learning')" style="cursor: pointer;">
+                            Vision-Language Models
+                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-vlms"></i>
                         </span>
                     </td>
-                    <td class="text-center">
-                        <a class="label label-caution" href=""> <i class="fa-regular fa-file-word"></i> Homework 09 </a>
-                    </td>
+                    <td class="text-center"></td>
                 </tr>
-                <tr id="resources-lec-reliability" style="display: none;">
+                <tr id="resources-lec-vlms" style="display: none;">
                     <td colspan="3">
                         <div class="row">
                             <div class="col-md-4">
@@ -2368,17 +2402,89 @@
                 </tr>
 
                 <tr>
+                    <td class="text-center text-strong">04/15</td>
+                    <td class="text-strong">
+                        <span onclick="toggleResourcesLectures('lec-reliability','Deep_Learning')" style="cursor: pointer;">
+                            Reliability of Deep Learning-Based Models
+                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-reliability"></i>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <a class="label label-caution" href=""> <i class="fa-regular fa-file-word"></i> Homework 09 </a>
+                    </td>
+                </tr>
+                <tr id="resources-lec-reliability" style="display: none;">
+                    <td colspan="3">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4><i class="fa fa-book" aria-hidden="true"></i>Readings</h4>
+                                <ul>
+                                    <li><a href="">Slides</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h4><i class="fa fa-video-camera" aria-hidden="true"></i>Videos</h4>
+                            </div>
+                            <div class="col-md-4">
+                                <h4><i class="fa-brands fa-python" aria-hidden="true"></i>Code</h4>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
                     <td colspan="4" class="text-center text-strong text-caution" style="border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; padding: 4px;">
                         Multiple-View Analysis
                     </td>
                 </tr>
 
                 <tr>
-                    <td rowspan="5" class="text-strong text-primary text-center unit" id="unit-cell-Multiple_View">
+                    <td rowspan="4" class="text-strong text-primary text-center unit" id="unit-cell-Multiple_View">
                         Multiple-View
                     </td>
 
-                    <td class="text-center text-strong">04/15</td>
+                    <td class="text-center text-strong">
+                        <span data-title="Project 04" class="label label-success hover-assignment hover-success"> 
+                            <i class="fa-solid fa-diagram-project"></i> 04/17
+                        </span>
+                    </td>
+                    <td class="text-strong">
+                        <span onclick="toggleResourcesLectures('lec-object-tracking','Multiple_View')" style="cursor: pointer;">
+                            Object Tracking
+                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-object-tracking"></i>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <a class="label label-success" href=""> <i class="fa-solid fa-diagram-project"></i> Project 05 </a>
+                        &nbsp;
+                        <a class="label label-caution" href=""> <i class="fa-regular fa-file-word"></i> Homework 10 </a>
+                    </td>
+                </tr>
+                <tr id="resources-lec-object-tracking" style="display: none;">
+                    <td colspan="3">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4><i class="fa fa-book" aria-hidden="true"></i>Readings</h4>
+                                <ul>
+                                    <li><a href="">Slides</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <h4><i class="fa fa-video-camera" aria-hidden="true"></i>Videos</h4>
+                            </div>
+                            <div class="col-md-4">
+                                <h4><i class="fa-brands fa-python" aria-hidden="true"></i>Code</h4>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="text-center text-strong">
+                        <span data-title="Practical 05" class="label label-primary hover-assignment hover-primary"> 
+                            <i class="fa-brands fa-python"></i> 04/20
+                        </span>
+                    </td>
                     <td class="text-strong">
                         <span onclick="toggleResourcesLectures('lec-camera-calibration','Multiple_View')" style="cursor: pointer;">
                             Camera Calibration
@@ -2408,8 +2514,8 @@
 
                 <tr>
                     <td class="text-center text-strong">
-                        <span data-title="Project 04" class="label label-success hover-assignment hover-success"> 
-                            <i class="fa-solid fa-diagram-project"></i> 04/17
+                        <span data-title="Homework 09" class="label label-caution hover-assignment hover-caution"> 
+                            <i class="fa-regular fa-file-word"></i> 04/22
                         </span>
                     </td>
                     <td class="text-strong">
@@ -2418,9 +2524,7 @@
                             <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-3d-reconstruction-1"></i>
                         </span>
                     </td>
-                    <td class="text-center">
-                        <a class="label label-success" href=""> <i class="fa-solid fa-diagram-project"></i> Project 05 </a>
-                    </td>
+                    <td class="text-center"></td>
                 </tr>
                 <tr id="resources-lec-3d-reconstruction-1" style="display: none;">
                     <td colspan="3">
@@ -2443,8 +2547,8 @@
 
                 <tr>
                     <td class="text-center text-strong">
-                        <span data-title="Practical 05" class="label label-primary hover-assignment hover-primary"> 
-                            <i class="fa-brands fa-python"></i> 04/20
+                        <span data-title="Homework 10" class="label label-caution hover-assignment hover-caution"> 
+                            <i class="fa-regular fa-file-word"></i> 04/24
                         </span>
                     </td>
                     <td class="text-strong">
@@ -2456,70 +2560,6 @@
                     <td class="text-center"></td>
                 </tr>
                 <tr id="resources-lec-3d-reconstruction-2" style="display: none;">
-                    <td colspan="3">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h4><i class="fa fa-book" aria-hidden="true"></i>Readings</h4>
-                                <ul>
-                                    <li><a href="">Slides</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4">
-                                <h4><i class="fa fa-video-camera" aria-hidden="true"></i>Videos</h4>
-                            </div>
-                            <div class="col-md-4">
-                                <h4><i class="fa-brands fa-python" aria-hidden="true"></i>Code</h4>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="text-center text-strong">
-                        <span data-title="Homework 09" class="label label-caution hover-assignment hover-caution"> 
-                            <i class="fa-regular fa-file-word"></i> 04/22
-                        </span>
-                    </td>
-                    <td class="text-strong">
-                        <span onclick="toggleResourcesLectures('lec-object-tracking','Multiple_View')" style="cursor: pointer;">
-                            Object Tracking
-                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-object-tracking"></i>
-                        </span>
-                    </td>
-                    <td class="text-center">
-                        <a class="label label-caution" href=""> <i class="fa-regular fa-file-word"></i> Homework 10 </a>
-                    </td>
-                </tr>
-                <tr id="resources-lec-object-tracking" style="display: none;">
-                    <td colspan="3">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h4><i class="fa fa-book" aria-hidden="true"></i>Readings</h4>
-                                <ul>
-                                    <li><a href="">Slides</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-md-4">
-                                <h4><i class="fa fa-video-camera" aria-hidden="true"></i>Videos</h4>
-                            </div>
-                            <div class="col-md-4">
-                                <h4><i class="fa-brands fa-python" aria-hidden="true"></i>Code</h4>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="text-center text-strong">04/24</td>
-                    <td class="text-strong">
-                        <span onclick="toggleResourcesLectures('lec-ecology','Multiple_View')" style="cursor: pointer;">
-                            Applications: Computer Vision for Ecology
-                            <i class="fa fa-info-circle"></i><i class="fa fa-caret-right" id="caret-lec-ecology"></i>
-                        </span>
-                    </td>
-                    <td class="text-center"></td>
-                </tr>
-                <tr id="resources-lec-ecology" style="display: none;">
                     <td colspan="3">
                         <div class="row">
                             <div class="col-md-4">
@@ -2578,11 +2618,7 @@
                 </tr>
 
                 <tr>
-                    <td class="text-center text-strong">
-                        <span data-title="Homework 10" class="label label-caution hover-assignment hover-caution"> 
-                            <i class="fa-regular fa-file-word"></i> 04/29
-                        </span>
-                    </td>
+                    <td class="text-center text-strong">04/29</td>
                     <td class="text-strong">
                         Final Exam (optional)
                     </td>
