@@ -7068,3 +7068,7 @@ button.close {
 .deadline-danger {
   color: #c71c22;
 }
+
+.nav-pills {
+    display: inline-block;
+}
