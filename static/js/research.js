@@ -2,38 +2,29 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Modal Logic ---
-    
-    // Get all the modal elements
     const modal = document.getElementById('bibtex-modal');
     const overlay = document.getElementById('modal-overlay');
     const closeBtn = document.getElementById('modal-close-btn');
     const modalBody = document.querySelector('.modal-body');
     const copyBtn = document.getElementById('copy-bibtex-btn');
-
-    // Get all the buttons that open the modal
     const bibtexButtons = document.querySelectorAll('.bibtex-btn');
 
-    // Function to open the modal
     const openModal = (content) => {
-        if (!modal || !overlay || !modalBody) return; // Safety check
-        modalBody.innerHTML = content; // Set the content
+        if (!modal || !overlay || !modalBody) return; 
+        modalBody.innerHTML = content; 
         modal.classList.remove('hidden');
         overlay.classList.remove('hidden');
     };
 
-    // Function to close the modal
     const closeModal = () => {
-        if (!modal || !overlay) return; // Safety check
+        if (!modal || !overlay) return; 
         modal.classList.add('hidden');
         overlay.classList.add('hidden');
     };
 
-    // Add click listener to all BibTeX buttons
     bibtexButtons.forEach(button => {
         button.addEventListener('click', (event) => {
-            event.preventDefault(); // Stop the link from jumping
-            
-            // Get the ID of the content to show
+            event.preventDefault(); 
             const contentId = button.dataset.bibtexId; 
             const contentElement = document.getElementById(contentId);
             
@@ -45,62 +36,85 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add click listeners to close the modal
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-    }
-    if (overlay) {
-        overlay.addEventListener('click', closeModal);
-    }
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (overlay) overlay.addEventListener('click', closeModal);
 
-    // Optional: Close modal with the 'Escape' key
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
             closeModal();
         }
     });
 
-
-    // --- ADD THIS NEW COPY BUTTON LOGIC ---
+    // --- Copy Button Logic ---
     if (copyBtn) {
         copyBtn.addEventListener('click', () => {
-            // Find the <pre> tag inside the modal body
             const preTag = modalBody.querySelector('pre');
-            if (!preTag) return; // No <pre> tag found
+            if (!preTag) return; 
 
-            // Get the text content
             const textToCopy = preTag.textContent;
 
-            // Use the Clipboard API to write text
             navigator.clipboard.writeText(textToCopy).then(() => {
-                // --- Success Feedback ---
                 const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = '<i class="fa fa-check"></i> Copied!';
-                
-                // Change it back after 2 seconds
-                setTimeout(() => {
-                    copyBtn.innerHTML = originalText;
-                }, 5000);
-
+                setTimeout(() => { copyBtn.innerHTML = originalText; }, 5000);
             }).catch(err => {
-                // --- Error Feedback ---
                 console.error('Failed to copy text: ', err);
                 const originalText = copyBtn.innerHTML;
                 copyBtn.innerHTML = 'Error!';
-                
-                setTimeout(() => {
-                    copyBtn.innerHTML = originalText;
-                }, 2000);
+                setTimeout(() => { copyBtn.innerHTML = originalText; }, 2000);
             });
         });
     }
 
-    
+// --- Research Topic & Text Search Filter Logic ---
+    const checkboxes = document.querySelectorAll('.category-filter');
+    const searchInput = document.getElementById('research-search');
+    const researchItems = document.querySelectorAll('.research-item');
+
+    function filterResearch() {
+        // 1. Get all active checkbox values in lowercase
+        const activeFilters = Array.from(checkboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.value.toLowerCase());
+
+        // 2. Get the typed search string in lowercase
+        const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : "";
+
+        researchItems.forEach(item => {
+            // Check Category Tag matching
+            const labelsElement = item.querySelector('.research-labels');
+            const labelsText = labelsElement ? labelsElement.textContent.toLowerCase() : "";
+            const matchesCategory = activeFilters.length === 0 || 
+                                    activeFilters.some(filter => labelsText.includes(filter));
+
+            // Check Text Search matching (searches title, authors, and abstract)
+            const titleText = item.querySelector('h3') ? item.querySelector('h3').textContent.toLowerCase() : "";
+            const authorsText = item.querySelector('.authors') ? item.querySelector('.authors').textContent.toLowerCase() : "";
+            const abstractText = item.querySelector('.abstract') ? item.querySelector('.abstract').textContent.toLowerCase() : "";
+            
+            const matchesSearch = searchQuery === "" || 
+                                  titleText.includes(searchQuery) || 
+                                  authorsText.includes(searchQuery) || 
+                                  abstractText.includes(searchQuery);
+
+            // An item must pass BOTH constraints to stay visible
+            if (matchesCategory && matchesSearch) {
+                item.classList.remove('hidden');
+            } else {
+                item.classList.add('hidden');
+            }
+        });
+    }
+
+    // Bind event listeners to both the checkboxes and the search box
+    checkboxes.forEach(checkbox => checkbox.addEventListener('change', filterResearch));
+    if (searchInput) {
+        searchInput.addEventListener('input', filterResearch);
+    }
+
     // --- Pressed Nav Button Logic ---
-    // (We'll move the other script here too)
     const navResearch = document.getElementById("nav-research");
     if (navResearch) {
         navResearch.classList.add("pressed");
     }
-
 });

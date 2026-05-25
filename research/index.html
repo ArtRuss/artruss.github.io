@@ -47,9 +47,106 @@
     
     <main class="research-main">
 
+        <div class="research-filter-container">
+            <span class="filter-label">Filter by Topic:</span>
+            <div class="filter-options">
+                <label class="filter-option">
+                    <input type="checkbox" value="CV" class="category-filter"> Computer Vision (CV)
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="SE" class="category-filter"> Software Engineering (SE)
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="HCI" class="category-filter"> Human-Computer Interaction (HCI)
+                </label>
+                <label class="filter-option">
+                    <input type="checkbox" value="Robotics" class="category-filter"> Robotics
+                </label>
+            </div>
+
+            <div class="filter-search-container">
+                <i class="fa fa-search search-icon"></i>
+                <input type="text" id="research-search" placeholder="Search title, author, keyword...">
+            </div>
+
+        </div>
+
+        <div class="research-item">
+            <div class="research-image-container">
+                <img src="/static/img/safuzz.jpg" alt="Fuzzing project image">
+                <div class="research-labels">
+                    <span>SE</span>
+                </div>
+            </div>
+            <div class="research-text-container">
+                <h3> Uncovering Failures in Cyber-Physical System State Transitions: A Fuzzing-Based Approach Applied to sUAS </h3>
+                <p class="authors">
+                    Theodore Chambers, 
+                    <b>Arturo Miguel Russell Bernal</b>,
+                    Michael Vierhauser,
+                    Jane Cleland-Huang
+                </p>
+                <p class="publication-venue">
+                    2026 IEEE/ACM 48th International Conference on Software Engineering (ICSE)
+                </p>
+                <p class="abstract">
+                    The increasing deployment of small Uncrewed Aerial Systems
+                    (sUAS) in diverse and often safety-critical environments demands
+                    rigorous validation of onboard decision logic under various conditions. 
+                    In this paper, we present SaFUZZ, a state-aware fuzzing
+                    pipeline that validates core behavior associated with state transitions, 
+                    automated failsafes, and human operator interactions in sUAS
+                    applications operating under various timing conditions and environmental 
+                    disturbances. We create fuzzing specifications to detect
+                    behavioral deviations, and then dynamically generate associated
+                    Fault Trees to visualize states, modes, and environmental factors
+                    that contribute to the failure, thereby helping project stakeholders
+                    to analyze the failure and identify its root causes. We validated
+                    SaFUZZ against a real-world sUAS system and were able to identify
+                    several points of failure not previously detected by the system's
+                    development team. The fuzzing was conducted in a high-fidelity
+                    simulation environment, and outcomes were validated on physical
+                    sUAS in a real-world field testing setting. The findings from the
+                    study demonstrated SaFUZZ's ability to provide a practical and
+                    scalable approach to uncovering diverse state transition failures in
+                    a real-world sUAS application.
+                </p>
+                <div class="links-container">
+                    <a href="https://arxiv.org/pdf/2601.05449" class="research-link">
+                        <i class="fa fa-file-pdf-o space-right"></i> 
+                        PDF
+                    </a>
+                    <a href="#" class="research-link bibtex-btn" data-bibtex-id="bibtex-safuzz-fuzzing">
+                        <i class="fa fa-book space-right"></i> 
+                        BibTeX
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="bibtex-safuzz-fuzzing" class="hidden">
+
+<pre>@inproceedings{2026_SaFUZZ,
+    author      = {Chambers, Theodore 
+                   and Russell Bernal, Arturo Miguel 
+                   and Vierhauser, Michael
+                   and Cleland-Huang, Jane},
+    title       = {Uncovering Failures in Cyber-Physical
+                   System State Transitions: 
+                   A Fuzzing-Based Approach Applied to sUAS},
+    booktitle   = {IEEE/ACM 48th International Conference 
+                   on Software Engineering},
+    year        = {2026}
+}</pre>
+
+        </div>
+
+
         <div class="research-item">
             <div class="research-image-container">
                 <img src="/static/img/cognition-hierarchy.png" alt="Cognitive Envelopes project image">
+                <div class="research-labels">
+                    <span>SE</span>, Robotics, CV
+                </div>
             </div>
             <div class="research-text-container">
                 <h3> Cognition Envelopes for Bounded AI Reasoning in Autonomous sUAS Operations </h3>
@@ -57,14 +154,14 @@
                     Pedro Antonio Alarcón Granadeno, 
                     <b>Arturo Miguel Russell Bernal</b>,
                     Sofia Nelson, 
-                    Demetrius Hernandez, 
+                    Demetrius Hernandez, <br>
                     Maureen Petterson, 
                     Michael Murphy, 
                     Walter J Scheirer, 
                     Jane Cleland-Huang
                 </p>
                 <p class="publication-venue">
-                    2025 Submitted for Peer Review
+                    2026 IEEE/ACM Conference on AI for Software Engineering (CAIN)
                 </p>
                 <p class="abstract">
                     Cyber-physical systems increasingly rely on Foundational Models such as Large Language Models (LLMs) 
@@ -76,7 +173,7 @@
                     Cognition Envelopes require practical guidelines and systematic processes for their definition, validation, and assurance.
                 </p>
                 <div class="links-container">
-                    <a href="https://arxiv.org/pdf/2510.26905" class="research-link">
+                    <a href="https://par.nsf.gov/servlets/purl/10668139" class="research-link">
                         <i class="fa fa-file-pdf-o space-right"></i> 
                         PDF
                     </a>
@@ -89,17 +186,17 @@
         </div>
         <div id="bibtex-cognitive-envelopes" class="hidden">
 
-<pre>@article{2025_Cognition_Envelopes,
-    author    = {Alarc{\'o}n Granadeno, Pedro Antonio 
-                 and Russell Bernal, Arturo Miguel 
-                 and Nelson, Sofia and Hernandez, Demetrius 
-                 and Petterson, Maureen and Murphy, Michael 
-                 and Scheirer, Walter J and Cleland-Huang, Jane},
-    title     = {Cognition Envelopes for Bounded AI Reasoning 
-                 in Autonomous {sUAS} Operations},
-    journal   = {arXiv e-prints},
-    pages     = {arXiv--2510},
-    year      = {2025}
+<pre>@inproceedings{2026_Cognition_Envelopes,
+    author      = {Alarc{\'o}n Granadeno, Pedro Antonio 
+                   and Russell Bernal, Arturo Miguel 
+                   and Nelson, Sofia and Hernandez, Demetrius 
+                   and Petterson, Maureen and Murphy, Michael 
+                   and Scheirer, Walter J and Cleland-Huang, Jane},
+    title       = {Cognition Envelopes for Bounded AI Reasoning 
+                   in Autonomous {sUAS} Operations},
+    booktitle   = {IEEE/ACM Conference on AI 
+                   for Software Engineering},
+    year        = {2026}
 }</pre>
 
         </div>
@@ -108,6 +205,9 @@
         <div class="research-item">
             <div class="research-image-container">
                 <img src="/static/img/skytouch_updated.png" alt="SkyTouch project image">
+                <div class="research-labels">
+                    <span>HCI</span>, Robotics
+                </div>
             </div>
             <div class="research-text-container">
                 <h3> SkyTouch: Augmenting Situational Awareness for Multi-sUAS Pilots through Multi-Modal Haptics </h3>
@@ -167,6 +267,9 @@
         <div class="research-item">
             <div class="research-image-container">
                 <img src="/static/img/fig_cube3.png" alt="Validating Terrain Models project image">
+                <div class="research-labels">
+                    <span>SE</span>, CV
+                </div>
             </div>
             <div class="research-text-container">
                 <h3> Validating Terrain Models in Digital Twins for Trustworthy sUAS Operations </h3>
@@ -218,6 +321,16 @@
                         BibTeX
                     </a>
                 </div>
+                <p class="copyright-footnote">
+                    © 2025 IEEE.  Personal use of this material is permitted.
+                    Permission from IEEE must be obtained for all other uses,
+                    in any current or future media, including reprinting/republishing this material
+                    for advertising or promotional purposes, creating new collective works,
+                    for resale or redistribution to servers or lists, or reuse of any copyrighted 
+                    component of this work in other works. 
+                    For the version of record, see 
+                    <a href="https://ieeexplore.ieee.org/document/11273308">IEEE Xplore</a>.
+                </p>
             </div>
         </div>
         <div id="bibtex-validating-terrain" class="hidden">
@@ -242,6 +355,9 @@
         <div class="research-item">
             <div class="research-image-container">
                 <img src="/static/img/Actor068_a90_f0710.jpg" alt="Psych-ER project image">
+                <div class="research-labels">
+                    <span>CV</span>
+                </div>
             </div>
             <div class="research-text-container">
                 <h3> Psych-Occlusion: Using Visual Psychophysics for Aerial Detection of Occluded Persons During Search and Rescue </h3>
@@ -316,6 +432,9 @@
         <div class="research-item">
             <div class="research-image-container">
                 <img src="/static/img/Actor100_a90_f0001.jpg" alt="NOMAD project image">
+                <div class="research-labels">
+                    <span>CV</span>
+                </div>
             </div>
             <div class="research-text-container">
                 <h3> NOMAD: A Natural, Occluded, Multi-Scale Aerial Dataset, for Emergency Response Scenarios </h3>
@@ -379,6 +498,9 @@
         <div class="research-item">
             <div class="research-image-container">
                 <img src="/static/img/safety_buffer.png" alt="Safe Separation Distance project image">
+                <div class="research-labels">
+                    <span>SE</span>
+                </div>
             </div>
             <div class="research-text-container">
                 <h3> An Environmentally Complex Requirement for Safe Separation Distance Between UAVs </h3>
@@ -453,6 +575,9 @@
         <div class="research-item">
             <div class="research-image-container">
                 <img src="/static/img/CaseInterID.png" alt="AirSight project image">
+                <div class="research-labels">
+                    <span>SE, CV</span>
+                </div>
             </div>
             <div class="research-text-container">
                 <h3> Hierarchically Organized Computer Vision in Support of Multi-Faceted Search for Missing Persons </h3>
@@ -532,7 +657,7 @@
         <a href="https://coolors.co/">Coolors</a>,
         <a href="https://fontawesome.com/v4/icons/">Font Awesome</a>, and
         <a href="http://www.python.org/">Python</a>.
-        <br> Last updated: Nov 2025
+        <br> Last updated: May 2026
         </small>
         </p>
     </footer>
